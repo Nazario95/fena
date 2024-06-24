@@ -1,0 +1,52 @@
+/* section-avisos */
+.aviso, .avisos small{
+    font-weight: bold!important;
+}
+
+/* section-pub */
+.pub-content{
+    width: 100%!important;
+    height: 110px!important;
+}
+.pub-header-img div .img-pub, .img-pub{   
+    height: 100%;
+   object-fit: cover!important;
+}
+
+/* cambiar tamaxo del buscado para mobil */
+@media (max-width:610px){
+    .search-model-box .search-model-form input {
+        width: auto;
+        font-size:x-large;
+    }
+    .icon-search-mobile{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+/* ==========> PAGINA:fena.html */
+/* logos: fena y G.E */
+.container-logos-oficiales{
+    height: 200px;
+    width: 500px;
+}
+
+.container-logos-oficiales div {
+    max-width: 50%;
+}
+
+.logo-fena-big{
+    width: 100%;
+    scale: 2; /* al poner un logo con mas calidad, quitar la escala */
+}
+
+.logo-escudo-eg-big{
+    width: 100%;
+}
+
+
+/* ======= PAGINA:equipo.html */
+.container-logos-oficiales{
+    margin: 0 auto;
+}

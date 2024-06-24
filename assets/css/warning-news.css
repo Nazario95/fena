@@ -1,0 +1,34 @@
+/* * INDEX-AVISOS */
+.container-avisos{
+    width: 100vw;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+}
+
+.container-avisos .content-avisos{
+    display: flex;
+    animation: scroll 60s linear infinite;
+    -webkit-animation: scroll 60s linear infinite;;
+    width: calc(200px * 26);
+}
+
+/* .container-avisos .avisos{
+    margin: 10px;
+} */
+
+.container-avisos .avisos small{
+    width: 100%;    
+}
+
+@keyframes scroll{
+    0%{
+        -webkit-animation: translateX(0);
+        transform: translateX(0);
+    }
+
+    100%{
+        -webkit-transform: translateX(calc(-200px * 13));
+        transform: translateX(calc(-200px * 13));
+    }
+}
