@@ -1,3 +1,7 @@
+/* ==========>GLOBALES */
+.fw-bold{
+    font-weight: bold;
+}
 /* section-avisos */
 .aviso, .avisos small{
     font-weight: bold!important;
