@@ -80,26 +80,12 @@ function insertComunicados(){
             </div>
         `
     });
-    console.log(componente)
+    // console.log(componente)
     listaAvisos.innerHTML = componente;
     
 }
 
 function init(){
-    //=====>Global-Navegacion
-    const navBar = document.getElementById('navigation')  
-
-    //inyectar organigrama
-    const listaPersonal = document.createElement('LI');
-    listaPersonal.innerHTML = `<a href="./fena.html?section=personal">Lista del Personal</a>`;
-    navBar.children[1].children[1].appendChild(listaPersonal)
-
-    //inyectar enlace historial
-    const participaciones = document.createElement('LI');
-    participaciones.innerHTML = `<a href="./competiciones.html?section=memorias">memoria de participaciones</a>`
-    navBar.children[4].children[1].appendChild(participaciones)
-
-
     // =====>Solo competiciones.html
     if(location.pathname.indexOf('competiciones.html') != -1){
         let section =  searchParamURL();
@@ -119,7 +105,7 @@ function init(){
     }
 
      // =====>Solo fena.html
-     if(location.pathname.indexOf('fena.html') != -1){
+    if(location.pathname.indexOf('fena.html') != -1){
         let section =  searchParamURL();
          //Ver Seccion Memoria de participaciones
          if(section[0].section == 'nosotros'){
@@ -131,7 +117,7 @@ function init(){
         if(section[0].section == 'personal'){
             removeDnone('id','fena-personal');
         }
-     }
+    }
 
 }
 

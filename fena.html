@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="./assets/css/themify-icons.css">
         <link rel="stylesheet" href="./assets/css/slick.css">
         <link rel="stylesheet" href="./assets/css/nice-select.css">
+        <link rel="stylesheet" href="./assets/css/tiny-slider.css">
         <link rel="stylesheet" href="./assets/css/style.css">
     
         <!-- mis css -->
@@ -85,10 +86,10 @@
                     <div class="container-avisos">
                         <div class="content-avisos">
                             <div class="avisos">
-                                <small class="text-dark aviso-1">LOREM 2 - Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus odio nam aliquam, facere cum corporis sint soluta, itaque assumenda architecto natus laboriosam. Repudiandae ut explicabo sapiente aliquid itaque voluptatibus laborum accusamus molestiae quis ea. Quidem facere quibusdam modi numquam aliquid.</small>
+                                <small class="text-dark aviso-1"></small>
                             </div>
                             <div class="avisos">
-                                <small class="text-dark aviso-2">LOREM1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi non praesentium dolores dolorem eius dolorum nam a itaque officiis cupiditate, fugiat voluptatibus, explicabo dicta suscipit, quaerat obcaecati quod ratione velit!</small>
+                                <small class="text-dark aviso-2"></small>
                             </div>                            
                         </div>
                     </div>
@@ -136,7 +137,8 @@
                                         <li><a href="#">FENA</a>
                                             <ul class="submenu">
                                                 <li><a href="./fena.html?section=nosotros">Nosotros</a></li>
-                                                <li><a href="./fena.html?section=junta">Junta Directiva</a></li>                                               
+                                                <li><a href="./fena.html?section=junta">Junta Directiva</a></li>  
+                                                <li><a href="./fena.html?section=personal">Lista del Personal</a></li>                                             
                                                 <li><a href="./contacto.html">Contacto</a></li>
                                             </ul>
                                         </li>
@@ -161,6 +163,7 @@
                                             <ul class="submenu">
                                                 <li><a href="./competiciones.html?section=masculino">masculino</a></li>
                                                 <li><a href="./competiciones.html?section=femenino">femenino</a></li>
+                                                <li><a href="./competiciones.html?section=memorias">memoria de participaciones</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#">equipos</a>
@@ -490,6 +493,617 @@
     </div>
    </div>
 
+   <!-- SECCION #Personal -->
+	<div class="untree_co-section d-none" id="fena-personal">  
+		<div class="testimonial-section before-footer-section">
+            
+			<div class="container">
+				<div class="row">                    
+					<div class="col-lg-7 mx-auto text-center">
+                        <div class="single-element-widget mt-30">    
+                            <div class="default-select d-flex justify-content-center" id="default-select"">
+                                <select class="col-6" id="menu-personal">
+                                    <option value="todo">- Ver todo -</option>
+                                    <option value="directiva" disabled>Ver Personal de la Direccion</option>
+                                    <option value="secretaria" disabled>Ver Personal de la Secretaria</option>
+                                    <option value="tecnico" disabled>Ver Personal de la Tecnico</option>
+                                    <option value="rrhh" disabled>Ver Personal de los RR.HH</option>
+                                    <option value="deporte" disabled>Ver Staf Tecnico</option>
+                                </select>
+                            </div>
+                        </div>
+						<h2 class="section-title mt-4">PERSONAL DE LA FENA</h2>
+					</div>
+				</div>
+
+				<div class="row justify-content-center">
+					<div class="col-lg-12">
+						<div class="testimonial-slider-wrap text-center">
+
+							<div id="testimonial-nav">
+								<span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
+								<span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
+							</div>
+
+							<div class="testimonial-slider" id="personal-directiva">
+								<!-- ====>PERSONAL DIRECTIVA -->
+                                 <!-- Presidente -->
+								<div class="item directiva">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/gallery/team3.png" alt="Imagen-Presidente" class="img-fluid" id="img-presidente">
+													</div>
+													<h2 class="font-weight-bold" id="nom-presidente">Don Antonio Andomo ANDOMO BINDANG</h2>
+													<span class="position d-block mb-3 text-danger">PRESIDENT<span class="genero-presidente">E</span> DE LA FENA</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-presidente">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2000. Durante su direccion la FENA ha logrado varios objetivos como los son: 20 xxx, 50xxx, 70xxx, etc.
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div> 
+                                <!-- vicepresidente -->
+                                <div class="item directiva">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/gallery/team2.png" alt="imagen-vice-presidente" class="img-fluid" id="img-vice">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-vice">Don Daniel MOMESE NSI</h2>
+													<span class="position d-block mb-3 text-danger">VICEPRESIDENT<span class="genere-vice-presi">E</span> DE LA FENA</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-vice">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2005. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div> 
+                                <!-- Secretario General -->
+                                <div class="item directiva">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/gallery/team1.png" alt="imagen-secre-general" class="img-fluid" id="img-secre-general">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-secre-general">Alfa David Masias NDONG MANGUE</h2>
+													<span class="position d-block mb-3 text-danger">SECRETARI<span class="genere-secre-general">O </span> GENERAL</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-secre-general">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2005. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>                                
+                                <!-- delegado prov. annobon -->
+                                <div class="item directiva">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/logo/logo.png" alt="imagen-del-prov-annobon" class="img-fluid" id="img-del-prov-annobon">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-prov-annobon">Eduardo MEJIA VILLAHUETE</h2>
+													<span class="position d-block mb-3 text-danger">DELEGAD<span class="genero-del-prov-annobon">O</span>
+                                                        PROVINCIAL DE ANNOBON
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-prov-annobon">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div> 
+                                 <!-- delegado prov. bata -->
+                                 <div class="item directiva">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/logo/logo.png" alt="imagen-del-prov-bata" class="img-fluid" id="img-del-prov-bata">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-prov-bata">Rufina Maria Mba BAKALE AVOMO</h2>
+													<span class="position d-block mb-3 text-danger">DELEGAD<span class="genero-del-prov-bata">A</span>
+                                                        PROVINCIAL DE BATA
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-prov-bata">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+                                 <!-- delegado adjunto bata -->
+                                 <div class="item directiva">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/gallery/team2.png" alt="imagen-del-dele-adjunto-bata" class="img-fluid" id="img-del-dele-adjunto-bata">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-dele-adjunto-bata">Maria Luisa Kiebiyene ONDO NSURU</h2>
+													<span class="position d-block mb-3 text-danger">DELEGAD<span class="genero-del-dele-adjunto-bata">A</span>
+                                                        ADJUNT<span class="genero-del-dele-adjunto-bata-2">A</span> PROVINCIAL DE BATA
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-genero-del-dele-adjunto-bata">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<!-- ===>PERSONAL TECNICO -->
+                                 <!-- DG Marketing -->
+                                <div class="item tecnico">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/gallery/team3.png" alt="imagen-dg-marketing" class="img-fluid" id="img-dg-marketing">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-dg-marketing">Alberto BACALE MAQUINA</h2>
+													<span class="position d-block mb-3 text-danger">D.G DE MARKETING, INFRAESTRUCTURAS Y SANIDAD DEPORTIVA</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-dg-marketing">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2005. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+                                 <!-- Jefe del gabinete del presidente -->
+                                <div class="item tecnico">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/logo/logo.png" alt="imagen-del-jefe-gabinete-presidente" class="img-fluid" id="img-del-jefe-gabinete-presidente">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-jefe-gabinete-presidente">Ceferina Angono MBOMIO MIDJE</h2>
+													<span class="position d-block mb-3 text-danger">JEF<span class="genero-jefe-gabinete-presidente">E</span> DEL GABINETE DEL PRESIDENTE</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-jefe-gabinete-presidente">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+                                 <!-- Asesor del presidente y consejero -->
+                                 <div class="item tecnico">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/logo/logo.png" alt="imagen-del-asesor-consejero" class="img-fluid" id="img-del-asesor-consejero">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-asesor-consejero">Andres EDU MBA</h2>
+													<span class="position d-block mb-3 text-danger">ASESOR<span class="genero-asesor-consejero"></span>  Y CONSEJERO DEL PRESIDENTE</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-asesor-consejero">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+                                <!-- Jefe de Servicios de prensa -->                                 
+                                <div class="item tecnico">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/logo/logo.png" alt="imagen-del-jefe-prensa" class="img-fluid" id="img-del-jefe-prensa">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-jefe-prensa">Benjamin Engonga NGUI EYANG</h2>
+													<span class="position d-block mb-3 text-danger">JEF<span class="genero-jefe-prensa">E</span> DE SERVICIOS DE PRENSA</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-jefe-prensa">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+                                <!-- asesor juridico -->                                 
+                                <div class="item tecnico">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/logo/logo.png" alt="imagen-del-asesor-juridico" class="img-fluid" id="img-del-asesor-jurico">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-asesor-juridico">Juan Eliseo MBOMIO NSUE</h2>
+													<span class="position d-block mb-3 text-danger">ASESOR<span class="genero-asesor"></span> JURIDICO
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-asesor-juridico">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+                                 <!-- Tecnico contable -->
+                                 <div class="item tecnico">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/logo/escudo.png" alt="imagen-del-tecnico-contable" class="img-fluid" id="img-del-tecnico-contable">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-tecnico-contable">Dionisia Akele MESIE ANGUESOMO</h2>
+													<span class="position d-block mb-3 text-danger">TECNICO CONSTABLE</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-tecnico-contable">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+                                <!-- Auxiliar contable -->
+                                <div class="item tecnico">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/logo/escudo.png" alt="imagen-del-aux-contable" class="img-fluid" id="img-del-aux-contable">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-aux-contable">Dionisia Akele MESIE ANGUESOMO</h2>
+													<span class="position d-block mb-3 text-danger">AUXILIAR CONSTABLE</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-aux-contable">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+                                <!-- Asistente del presidente -->
+                                <div class="item tecnico">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/logo/escudo.png" alt="imagen-del-asis-presi" class="img-fluid" id="img-del-asis-presi">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-asis-presi">Juana Asteria Obono ONA NCHAMA</h2>
+													<span class="position d-block mb-3 text-danger">ASISTENT<span class="genero-asis-presi">A</span> DEL PRESIDENTE</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-asis-presi">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+                                 <!-- asesor tecnico bata -->
+                                 <div class="item tecnico">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/gallery/team2.png" alt="imagen-del-asesor-tec-bata" class="img-fluid" id="img-del-asesor-tec-bata">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-asesor-tec-bata">Fernando Obiang OCHAGA NCHAMA</h2>
+													<span class="position d-block mb-3 text-danger">ASESOR<span class="genero-asesor-tec-bata"></span> TECNICO DE BATA</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-asesor-tec-bata">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+                                 <!-- Responsable materia Tecnico -->
+                                 <div class="item tecnico">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/gallery/team2.png" alt="imagen-del-resp-mat-dep" class="img-fluid" id="img-del-resp-mat-dep">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-resp-mat-dep">Jose Antonio Ndong ONDO OYANA</h2>
+													<span class="position d-block mb-3 text-danger">RESPONSABLE DEL MATERIAL DEPORTIVO</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-resp-mat-dep">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+                                 <!-- Responsable del marketing -->
+                                 <div class="item tecnico">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/gallery/team1.png" alt="imagen-del-resp-marketing" class="img-fluid" id="img-del-resp-marketing">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-resp-marketing">Lorenzo Enenme MITOGO ASANGONO</h2>
+													<span class="position d-block mb-3 text-danger">RESPONSABLE DE MARKETING</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-resp-marketing">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+                                 <!-- Responsable de infraestructura deporvas -->
+                                 <div class="item tecnico">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/gallery/team3.png" alt="imagen-del-resp-infra-dep" class="img-fluid" id="img-del-resp-infra-dep">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-resp-infra-dep">Maria Candelaria Centrola BEE MANGUE</h2>
+													<span class="position d-block mb-3 text-danger">RESPONSABLE DE INFRAESTRUCTURAS DEPORTIVAS</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-resp-infra-dep">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+                                <!-- =====>Staf Tecnico de deporte -->
+                                  <!-- jefe de Servicios de competiciones y Selecionador -->
+                                  <div class="item deporte">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/gallery/tranding1.png" alt="imagen-del-selecionador-nacional" class="img-fluid" id="img-del-selecionador-nacional">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-selecionador-nacional">Florencio Engono NZE MIBUY</h2>
+													<span class="position d-block mb-3 text-danger">JEFE DE SERVICIOS DE COMPETICIONES Y SELECIONADOR NACIONAL</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-selecionador-nacional">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+                                 <!-- Responsable de medicina deportiva - Bata -->
+                                 <div class="item deporte">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/gallery/team1.png" alt="imagen-del-resp-medicina-bata" class="img-fluid" id="img-del-resp-medicina-bata">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-resp-medicina-bata">Barbara Mangue ESONO MAYE</h2>
+													<span class="position d-block mb-3 text-danger">RESPONSABLE DE MEDICINA DEPORTIVA EN BATA</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-resp-medicina-bata">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+                                <!-- =====> Secretaria -->
+                                 <!-- Coordinadora Permante -->
+                                <div class="item secretaria">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/gallery/team2.png" alt="imagen-del-coordinadora-inter" class="img-fluid" id="img-del-coordinadora-inter">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-coordinadora-inter">Maria Luisa BORABOTA UPOLO</h2>
+													<span class="position d-block mb-3 text-danger">COORDINADOR<span class="genero-coordicion-inter">A</span> PERMANENTE CON LA INTERNACIONAL</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-coordinadora-inter">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+                                <!-- Jefe finaciero-tesorero -->
+                                <div class="item secretaria">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/gallery/team3.png" alt="imagen-del-tesorero" class="img-fluid" id="img-del-tesorero">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-tesorero">Jeronimo Nguema ELA AYINGONO</h2>
+													<span class="position d-block mb-3 text-danger">JEF<span class="genero-tesorero">E </span> FINANCIERO-TESORERO</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-tesorero">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+                                <!-- =======> RRHH -->
+                                <!-- Responble  de archivo y rrhh -->
+                                <div class="item rrhh">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+											<div class="testimonial-block text-center">
+												<div class="author-info">
+													<div class="">
+														<img src="./assets/img/logo/logo.png" alt="imagen-responsable-rrhh" class="img-fluid" id="img-del-responsable-rrhh">
+													</div>
+													<h2 class="font-weight-bold"  id="nom-del-responsable-rrhh">Maria Teresa Angue NSUE ANDEME</h2>
+													<span class="position d-block mb-3 text-danger">RESPONSABLE DE ARCHIVO Y RRHH</span>
+												</div>
+
+                                                <blockquote class="mb-5 describcion-del-responsable-rrhh">
+													<p>&ldquo;
+                                                        Fue nombrado en el año 2011. 
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                                    &rdquo;</p>
+												</blockquote>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+            
+		</div>
+		<!-- End Testimonial Slider -->
+
+	</div>
+		
+
       <!-- Publicidad 3 -->
       <div class="banner-area gray-bg pt-90 pb-90">
         <div class="container">
@@ -583,24 +1197,27 @@
     <script src="./assets/js/jquery.slicknav.min.js"></script>
 
     <!-- Jquery Slick , Owl-Carousel Plugins -->
-    <!-- <script src="./assets/js/owl.carousel.min.js"></script> -->
+    <script src="./assets/js/owl.carousel.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
     <!-- Date Picker -->
-    <!-- <script src="./assets/js/gijgo.min.js"></script> -->
+    <script src="./assets/js/gijgo.min.js"></script>
     <!-- One Page, Animated-HeadLin -->
     <script src="./assets/js/wow.min.js"></script>
     <script src="./assets/js/animated.headline.js"></script>
-    <!-- <script src="./assets/js/jquery.magnific-popup.js"></script> -->
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
 
     <!-- Breaking New Pluging -->
-    <!-- <script src="./assets/js/jquery.ticker.js"></script> -->
-    <!-- <script src="./assets/js/site.js"></script> -->
-
+    <script src="./assets/js/jquery.ticker.js"></script>
+    <script src="./assets/js/site.js"></script>
     <script src="./assets/js/jquery.scrollUp.min.js"></script>
     
     <!-- Jquery Plugins, main Jquery -->	
-    <script src="./assets/js/plugins.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/plugins.js"></script>    
+    <script src="./assets/js/main.js"></script>    
+
+    <!-- Tiny-Slider -->
+    <script src="./assets/js/tiny-slider.js"></script>
+    <script src="./assets/js/custom.js"></script>
         
     <!-- local JS -->
     <script src="./assets/js/local-js/app.js" type="module"></script>
