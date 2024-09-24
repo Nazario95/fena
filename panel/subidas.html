@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FENA-Control Panel</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
+  <!-- sweetAlert2 -->
+  <link rel="stylesheet" href="./plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="./dist/css/adminlte.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="./dist/css/style.css">
+</head>
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper bg-fondo-nm">
+    <!--===========#1 Bara de navegacion ============ -->
+    <nav class="main-header navbar navbar-expand bg-fondo-nm border-0 menu-subidas">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link color-texto-nm" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item nav-tabs-nm col-3" id="btn-subir-noticia">
+          <a class="nav-link color-texto-nm px-0 mx-0 text-center" href="./subidas.html?upload=noticia">Subir Noticia</a>
+        </li>
+        <li class="nav-item nav-tabs-nm col-3" id="btn-subir-personal">
+          <a class="nav-link color-texto-nm px-0 mx-0 text-center" href="./subidas.html?upload=personal">Subir personal</a>
+        </li>
+        <li class="nav-item nav-tabs-nm col-3" id="btn-subir-trofeo">
+          <a class="nav-link color-texto-nm px-0 mx-0 text-center" href="./subidas.html?upload=trofeos">Subir Trofeo</a>
+        </li>
+        <li class="nav-item nav-tabs-nm col-3" id="btn-subir-nadador">
+          <a class="nav-link color-texto-nm px-0 mx-0 text-center" href="./subidas.html?upload=nadador">Subir Nadador</a>
+        </li>
+        <li class="nav-item nav-tabs-nm col-4" id="btn-subir-comunicado">
+          <a class="nav-link color-texto-nm mx-0 text-center" href="./subidas.html?upload=comunicado">Subir Comunicado</a>
+        </li>
+        <li class="nav-item nav-tabs-nm col-4" id="btn-subir-publicidad">
+          <a class="nav-link color-texto-nm mx-0 text-center" href="./subidas.html?upload=publicidad">Subir Publicidad</a>
+        </li>
+      </ul>
+    </nav>  
+
+    <!-- ============= #2.Menu aside========== -->
+    <aside class="main-sidebar bg-fondo-nm elevation-4 menu-aside-principal">
+      <!-- Brand Logo -->
+      <a href="/panel/dashboard.html" class="brand-link bg-componente-nm">
+        <img src="/panel/dist/img/usr.png" alt="fena Logo" class="brand-image img-circle elevation-3 img-logo-fena" style="opacity: .8">
+        <span class="brand-text p-3 text-light">FENA-Admin Panel</span>
+      </a>
+      
+      <div class="sidebar"> 
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+            <!-- componente-menu-aside -->
+            <li class="nav-item nav-tabs-nm border-bottom">
+              <a href="/panel/dashboard.html?" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt color-texto-nm"></i>
+                <p class="color-texto-nm">
+                  Dashboard
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item nav-tabs-nm border-bottom">
+              <a href="/panel/subidas.html" class="nav-link">
+                <i class="nav-icon fas fa-upload color-texto-nm"></i>
+                <p class="color-texto-nm">
+                  Subidas
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item nav-tabs-nm border-bottom">
+              <a href="/panel/bd.html" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie color-texto-nm"></i>
+                <p class="color-texto-nm">
+                  Base de datos
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item nav-tabs-nm border-bottom">
+              <a href="/panel/configuracion.html" class="nav-link">
+                <i class="nav-icon fas fa-tools color-texto-nm"></i>
+                <p class="color-texto-nm">
+                  Configuracion
+                </p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- =========== #3.1. Contener Principal - Subir Noticia====== -->
+    <div class="content-wrapper bg-fondo-nm d-none" id="seccion-subir-noticia">
+      <!-- -----------Subir Noticia-------------- -->
+        <div class="d-flex justify-content-center">
+          <div class="col-md-8">
+            <!-- seccion#1.1-titulo_seccion -->
+            <section class="content-header">
+              <!-- titulo-seccion -->
+              <h6 class="color-texto-rojo text-center title-subir-noticia">
+                Subir Noticia
+              </h6>
+            </section>
+
+            <!-- seccion#1.2-componentes_seccion -->
+            <section class="content">
+              <form>
+                <div class="card-body">
+
+                  <!-- Seccion#1 - img de portada -->
+                   <div class="form-group">
+                    <label for="noticia-img-portada" class="color-texto-nm">Selecione la imagen de portada *</label>
+                    <div class="input-group">
+                      <div class="custom-file color-texto-nm">                        
+                        <input type="file" class="" id="noticia-img-portada">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Seccion#2 - titulo noticia -->
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="noticia-titulo-principal" placeholder="titulo principal de la noticia *">
+                  </div>
+
+                  <!-- Seccion#3 - parrafos-->
+                  <div class="parrafos">
+                    <div>
+                      <label class="color-texto-rojo text-center"> - Total de parrafos-</label>
+                      <select name="" id="total-parrafos" class="parrafos-total-actual-1">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="7">8</option>
+                        <option value="7">9</option>
+                        <option value="7">10</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group">
+                      <h5 class="d-none bg-warning px-2 titulo-info-parrafo">Introducir la informacion del parrafo <span class="parfo-actual">1</span></h5>
+                      <!-- parrafo-img- -->
+                      <label for="noticia-img-portada" class="color-texto-nm">selecione imgen de parrafo</label><small class="color-texto-rojo">(opcional)</small>
+                      <div class="input-group">
+                        <div class="custom-file color-texto-nm">                        
+                          <input type="file" class="" id="img-parrafo">
+                        </div>
+                      </div>
+  
+                      <!-- parrafo-subititulo -->
+                      <input type="text" class="form-control mb-1" id="subtitul-noticia" placeholder="subtitulo del parrafo (opcional)">
+  
+                      <!-- texto parrafo -->
+                      <textarea class="form-control" rows="10" placeholder="informacion-parrafo-1*" id="texto-parrado"></textarea>                    
+                    </div>
+                    <div class="d-none" id="container-parrafos">
+                      <div class="d-flex mb-2 parafos-paginadores">
+                        <small class="h-25 p-1 bg-danger control-paginador pag-1" type="button" ></small>
+                      </div>
+                    </div>                    
+                   
+                  </div>
+
+                  <!-- seccion4#meta_datos -->
+                  <div class="form-group">
+                    <!-- fecha -->                     
+                    <div>
+                      <label class="color-texto-nm">Fecha de la noticia</label>
+                      <input type="date" name="" id="fecha-noticia" max="2024-10-1">
+                    </div>
+                    
+                     <!-- categoria -->                     
+                     <div class="my-1">
+                        <label class="color-texto-nm my-2">Categoria</label>
+                        <select id="noticia-categoria">
+                          <option value="0" disabled selected>elija una categoria</option>
+                          <option value="deporte">Deporte</option>
+                          <option value="politica">Politica</option>
+                          <option value="tecnologia">Tecnologia</option>
+                          <option value="cultura">Cultura</option>
+                        </select>
+                      </div>
+
+                      <!-- lugar del hecho -->
+                      <div class="my-1">
+                        <h6 class="color-texto-nm my-2">Lugar del hecho</h6>
+                        <input type="text" class="form-control mb-1" id="noticia-pais" placeholder="pais donde ocurio el hecho (opcional)">
+
+                        <input type="text" class="form-control mb-1" id="noticia-provincia" placeholder="Provincia/condado/estado, donde ocurio el hecho (opcional)">
+
+                        <input type="text" class="form-control mb-1" id="noticia-ciudad" placeholder="ciudad donde ocurio el hecho (opcional)">
+
+                        <input type="text" class="form-control mb-1" id="noticia-bario" placeholder="zona/bario/ubicacion de la ciudad (opcional)">                        
+                      </div>
+
+                       <!-- autor -->
+                       <div class="my-1">
+                        <h6 class="color-texto-nm my-2">Reportero y Redactor de la Noticia</h6>
+
+                        <input type="text" class="form-control mb-1" id="noticia-reportero" placeholder="nombre del reportero">
+
+                        <input type="text" class="form-control mb-1" id="noticia-redactor" placeholder="nombre del redactor del articulo">       
+                      </div>
+                  </div>
+
+                </div>
+
+                <div class="card-footer d-flex justify-content-center py-0">
+                  <button  class="btn bg-componente-nm color-texto-nm col-12 col-lg-8" id="btn-subir-noticias">Subir Noticia
+                    <img class="efx-carga-1 d-none" src="./dist/img/load.svg" alt="" style="width:1.2rem">
+                  </button>                  
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+    </div>
+
+    <!-- =========== #3.2. Contener Principal - Subir Personal====== -->
+    <div class="content-wrapper bg-fondo-nm d-none" id="seccion-subir-personal">
+      <!-- -----------Subir Noticia-------------- -->
+        <div class="d-flex justify-content-center">
+          <div class="col-md-8">
+            <!-- seccion#1.1-titulo_seccion -->
+            <section class="content-header">
+              <!-- titulo-seccion -->
+              <h6 class="color-texto-rojo text-center txt-subir-personal">
+                Subir Personal
+              </h6>
+            </section>
+
+            <!-- seccion#1.2-componentes_seccion -->
+            <section class="content">
+              <form>
+                <div class="card-body">
+
+                  <!-- Seccion#1 - img del personal -->
+                   <div class="form-group">
+                    <label for="personal-img" class="color-texto-nm">Selecione la imagen del personal *</label>
+                    <div class="input-group">
+                      <div class="custom-file color-texto-nm">                        
+                        <input type="file" class="" id="personal-img">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Seccion#2 - nombre completo -->
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="personal-nombre" placeholder="nombre*">                    
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="personal-apellidos" placeholder="apellidos*">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="personal-funcion" placeholder="cargo/funcion/responsabilidad*">
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control personal-mas-info" rows="5" placeholder="Mas informacion del personal*" id="personal-mas-info"></textarea> 
+                  </div>
+                </div>
+                <div class="card-footer d-flex justify-content-center py-0">
+                  <button type="submit" class="btn bg-componente-nm color-texto-nm col-12 col-lg-8 btn-subidas" id="subir-personal">
+                    Subir Personal
+                    <img src="./dist/img/load.svg"  class="cargando d-none" style="width:1.3rem">
+                  </button>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+    </div>
+    
+    <!-- =========== #3.3. Contener Principal - Subir comunicado====== -->
+    <div class="content-wrapper bg-fondo-nm d-none" id="seccion-subir-comunicado">
+      <!-- -----------Subir comunicado-------------- -->
+        <div class="d-flex justify-content-center">
+          <div class="col-md-8">
+            <!-- seccion#1.1-titulo_seccion -->
+            <section class="content-header">
+              <!-- titulo-seccion -->
+              <h6 class="color-texto-rojo text-center">
+                Subir Comunicado
+              </h6>
+            </section>
+
+            <!-- seccion#1.2-componentes_seccion -->
+            <section class="content">
+              <form>
+                <div class="card-body">                  
+                  <div class="form-group">
+                    <textarea class="form-control" rows="5" placeholder="Escribir comunicado*" id="comunicado"></textarea> 
+                  </div>
+
+                   <!-- autor -->
+                   <div class="my-1">
+                      <h6 class="color-texto-nm my-2">Reportero o Redactor del comunicado</h6>
+                      <input type="text" class="form-control mb-1" id="comunicado-redactor" placeholder="nombre del redactor del articulo (opcional)">       
+                  </div>
+
+                </div>
+
+                
+                <div class="card-footer d-flex justify-content-center py-0">
+                  <button type="submit" class="btn bg-componente-nm color-texto-nm col-12 col-lg-8 btn-subidas" id="subir-comunicado">Subir comunicado</button>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+    </div>
+
+     <!-- =========== #3.4. Contener Principal - Subir publicidad====== -->
+     <div class="content-wrapper bg-fondo-nm d-none" id="seccion-subir-publicidad">
+      <!-- -----------Subir Noticia-------------- -->
+        <div class="d-flex justify-content-center">
+          <div class="col-md-8">
+            <!-- seccion#1.1-titulo_seccion -->
+            <section class="content-header">
+              <!-- titulo-seccion -->
+              <h6 class="color-texto-rojo text-center">
+                Subir Publicidad
+              </h6>
+            </section>
+
+            <!-- seccion#1.2-componentes_seccion -->
+            <section class="content">
+              <form>
+                <div class="card-body">
+                  <!-- Seccion#1 - img del personal -->
+                   <div class="form-group">
+                    <label for="publicidad-img" class="color-texto-nm">Selecione la imagen de la publicidad *</label>
+                    <div class="input-group">
+                      <div class="custom-file color-texto-nm">                        
+                        <input type="file" class="" id="publicidad-img">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="my-1">
+                        <input type="text" class="form-control mb-1" id="slogan-publicidad" placeholder="Nombre o slogan de publicidad (opcional)">       
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="my-1">
+                        <input type="text" class="form-control mb-1" id="empresa-publicidad" placeholder="Para quien es la publicidad *">       
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="card-footer d-flex justify-content-center py-0">
+                  <button type="submit" class="btn bg-componente-nm color-texto-nm col-12 col-lg-8 btn-subidas" id="subir-publicidad">
+                    Subir Publicidad
+                    <img src="./dist/img/load.svg"  class="cargando d-none" style="width:1.3rem">
+                  </button>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+    </div>
+
+    <!-- =========== #3.?. Contener Principal - funcion no disponible====== -->
+     <div class="content-wrapper bg-fondo-nm d-none" id="seccion-subir-funcion-indisponible">
+        <div class="d-flex justify-content-center align-items-center vh-100">
+          <h4 class="color-texto-rojo">FUNCION NO DISPONIBLE</h4>
+        </div>
+     </div>
+
+    <!-- seccion#4-footer -->
+    <footer class="main-footer bg-fondo-nm border-0">
+      <div>
+         <h6 class="border-top color-texto-rojo text-center pt-2"> &copy;F.E.N.A EG - Control Panel - <span class="year">2024</span></h6>
+      </div>
+    </footer>
+    <!-- <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. At excepturi earum, laborum atque neque aliquid fugit sint iste modi. Autem, facere repellat illo optio dignissimos perferendis minima culpa explicabo unde, maiores doloremque officia vel deleniti ea ipsa nostrum rerum soluta labore reprehenderit. Minus illum, sunt cum quas delectus repellendus veniam quam officiis dolores. Nam consequuntur illum labore eaque mollitia laborum dolor quis? Dicta laboriosam quasi obcaecati quisquam expedita praesentium, nulla molestias earum quos enim? Facere qui voluptate doloremque excepturi magnam necessitatibus dolore, mollitia voluptatum deserunt distinctio earum dolor fugiat inventore ea soluta provident dicta obcaecati iusto, maxime cum assumenda praesentium.
+    </p> -->
+  </div>
+  <script src="./plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- ChartJS-Graficos -->
+  <script src="./plugins/chart.js/Chart.min.js"></script>
+  <!-- sweetAlert2 -->
+  <script src="./plugins/sweetalert2/sweetalert2.min.js"></script>
+  <!-- AdminLTE App --> 
+  <script src="./dist/js/adminlte.min.js"></script>
+  <script src="./dist/js/app.js" type="module"></script>
+  <script src="./dist/js/subidas.js" type="module"></script>
+  <script src="./dist/js/firebase.js" type="module"></script>
+</body>
+</html>

@@ -27,6 +27,9 @@
         width: 2.5rem;
         height: 2.5rem;
     }
+    .whats-right-img img{
+        max-width: 25%!important;
+    }
 }
 
 /* ==========> PAGINA:fena.html */

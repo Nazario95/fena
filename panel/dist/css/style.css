@@ -1,0 +1,71 @@
+/*#1.*************** GLOBALES */
+    /*A. Paleta de colores */
+    :root{
+        /*------Modo Noche----*/
+        --bg-nm:#000000;
+        --bg-component-nm:#a52222;
+        --text-nm:#fff;
+         /* ------Modo dia---- */
+        --bg:#f5f5f5;
+        --bg-component:#a52222;
+        --text:#000000;
+        /* valor-fijo */
+        --text-fijo:#be2626;
+    }
+    
+    /*B.0 Configuracion Fija */
+        .color-texto-rojo{
+            color:var(--text-fijo)!important ;
+        }
+        
+    /*B.1.-------Resetear configuraciones predetermindas*/
+
+        /*a. Cambiar color de componente selecionado en menu */
+        
+
+        /*C. config-Modo-Noche*/
+        .bg-fondo-nm{
+            background-color: var(--bg-nm);
+        }
+        .bg-componente-nm{
+            background-color: var(--bg-component-nm);
+        }
+        .color-texto-nm{
+            color: var(--text-nm)!important;
+        }
+        .nav-tabs-nm a:hover{
+            background-color: var(--bg-component-nm);
+        }
+
+
+        /* d.Config-Modo-dia */
+        /* .bg-fondo{
+            background-color: var(--bg);
+        }
+        .bg-componente{
+            background-color: var(--bg-component);
+        }
+        .color-texto{
+            color: var(--text)!important;
+        }
+        .nav-tabs a:hover{
+            background-color: var(--bg-component);
+        }
+        .nav-tabs.flex-column .nav-item.show .nav-link, .nav-tabs.flex-column .nav-link:hover{
+            color: var(--text)!important;
+        } */
+        
+.menu-subidas{
+    overflow-x: auto;
+}
+.menu-aside-principal::-webkit-scrollbar {
+    display: none; /* Oculta la barra de scroll en navegadores basados en WebKit */
+}
+@media (max-width:740px){
+    .menu-subidas::-webkit-scrollbar {
+        display: none; /* Oculta la barra de scroll en navegadores basados en WebKit */
+    }
+    
+   
+}
+/* Ajustar img en seccion de "index.html->Noticias > filtro" */

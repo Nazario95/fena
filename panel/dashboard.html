@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FENA-Control Panel</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
+  <!-- sweetAlert2 -->
+  <link rel="stylesheet" href="./plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="./dist/css/adminlte.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="./dist/css/style.css">
+</head>
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper bg-fondo-nm">
+    <!--===========#1 Bara de navegacion ============ -->
+    <nav class="main-header navbar navbar-expand bg-fondo-nm border-0">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link color-texto-nm" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+      </ul>
+    </nav>  
+
+    <!-- ============= #2.Menu aside========== -->
+    <aside class="main-sidebar bg-fondo-nm elevation-4">
+      <!-- Brand Logo -->
+      <a href="/panel/dashboard.html" class="brand-link bg-componente-nm">
+        <img src="/panel/dist/img/usr.png" alt="fena Logo" class="brand-image img-circle elevation-3 img-logo-fena" style="opacity: .8">
+        <span class="brand-text p-3 text-light">FENA-Admin Panel</span>
+      </a>
+      
+      <div class="sidebar"> 
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+            <!-- componente-menu-aside -->
+            <li class="nav-item nav-tabs-nm border-bottom">
+              <a href="/panel/dashboard.html?" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt color-texto-nm"></i>
+                <p class="color-texto-nm">
+                  Dashboard
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item nav-tabs-nm border-bottom">
+              <a href="/panel/subidas.html" class="nav-link">
+                <i class="nav-icon fas fa-upload color-texto-nm"></i>
+                <p class="color-texto-nm">
+                  Subidas
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item nav-tabs-nm border-bottom">
+              <a href="/panel/bd.html" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie color-texto-nm"></i>
+                <p class="color-texto-nm">
+                  Base de datos
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item nav-tabs-nm border-bottom">
+              <a href="/panel/configuracion.html" class="nav-link">
+                <i class="nav-icon fas fa-tools color-texto-nm"></i>
+                <p class="color-texto-nm">
+                  Configuracion
+                </p>
+              </a>
+            </li>
+
+
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- =========== #3. Contener Principal====== -->
+    <div class="content-wrapper bg-fondo-nm">
+
+      <!-- -----------Analitica de Noticias----------- -->
+        <!-- seccion#1.1-titulo_seccion -->
+        <section class="content-header border-bottom border-danger mb-2">
+          <div class="container-fluid">
+            <div>
+              <div>
+                <!-- titulo-seccion -->
+                <h4 class="color-texto-rojo text-center">
+                  Analitica de Noticias
+                </h4>
+              </div>
+            </div>
+          </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- seccion#1.2-componentes_seccion -->
+        <section class="content d-flex justify-content-center">
+          <div class="col-12 col-md-10">
+
+            <!-- a.Grafico Mensual Genral -->
+            <div class="card">
+              <div class="card-header bg-danger">
+                <h3 class="card-title">Total Noticias e interaccion de usuarios</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus text-light"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart">
+                  <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <!-- b.Grafico Mensual indivitual -->
+            <div class="card">
+              <div class="card-header bg-danger">
+                <h3 class="card-title">
+                  Categorias de noticias
+                </h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus text-light"></i>
+                  </button>
+                </div>
+              </div>
+
+              
+              <div class="card-body">
+                <div class="row">
+                  <!-- Total de Noticias -->
+                  <div class="col-6 col-md-3 text-center">
+                    <input id="donut-noticias" type="text" class="knob" value="0" data-width="90" data-height="90" data-fgColor="#3c8dbc">
+
+                    <div class="knob-label">Noticias</div>
+                  </div>
+
+                  <!-- Nuevas Noticias-->
+                  <div class="col-6 col-md-3 text-center">
+                    <input id="donut-noticias-nuevas" type="text" class="knob" value="0" data-width="90" data-height="90" data-fgColor="#f56954">
+
+                    <div class="knob-label">Nuevas Noticias</div>
+                  </div>
+
+                  <!-- Noticias Destacadas -->
+                  <div class="col-6 col-md-3 text-center">
+                    <input id="donut-noticias-destacadas" type="text" class="knob" value="0" data-width="90" data-height="90" data-fgColor="#00a65a">
+
+                    <div class="knob-label">Noticias Destacadas</div>
+                  </div>
+
+                  <!-- Noticias Populares -->
+                  <div class="col-6 col-md-3 text-center">
+                    <input id="donut-noticias-populares" type="text" class="knob" value="0" data-width="90" data-height="90" data-fgColor="#00c0ef">
+
+                    <div class="knob-label">Noticias Populares</div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+
+          </div>
+        </section>
+
+      
+         <!-- -----------Analitica de suscriptores----------- -->
+        <!-- seccion#2.1-titulo_seccion -->
+        <section class="content-header border-bottom border-danger mb-2">
+          <div class="container-fluid">
+            <div>
+              <div>
+                <!-- titulo-seccion -->
+                <h4 class="color-texto-rojo text-center">
+                  Suscriptores
+                </h4>
+              </div>
+            </div>
+          </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- seccion#2.2-componentes_seccion -->
+        <section class="content d-flex justify-content-center">
+          <div class="col-12 col-md-10">
+
+            <!-- a.Tarjetas de suscripciones -->
+            <div class="card">
+              <div class="card-header bg-danger">
+                <h3 class="card-title">Suscriptores</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus text-light"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="card-body">
+
+                <div class="row">
+                  <!-- Suscriptores -->
+                  <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                      <div class="inner">
+                        <h3 id="total-suscriptores">0</h3>        
+                        <p>Suscriptores</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Sucriptores por correo -->
+                  <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                      <div class="inner">
+                        <h3 id="total-suscriptores-correo">0</h3>        
+                        <p>Sucriptores por correo</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Sucritores de canala de whatsapp-->
+                  <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                      <div class="inner">
+                        <h3 id="total-suscriptores-whatsapp">0</h3>        
+                        <p>Suscriptores de canal de whatsapp</p>
+                      </div>                      
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                      <div class="inner">
+                        <h3 class="total-suscriptores-navegador">0</h3>        
+                        <p>Suscritos en la pagina</p>
+                      </div>                      
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+
+        <!-- -----------Analitica de Personal----------- -->
+        <!-- seccion#3.1-titulo_seccion -->
+        <section class="content-header border-bottom border-danger mb-2">
+          <div class="container-fluid">
+            <div>
+              <div>
+                <!-- titulo-seccion -->
+                <h4 class="color-texto-rojo text-center">
+                  Nadadores de la F.E.N.A
+                </h4>
+              </div>
+            </div>
+          </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- seccion#3.2-componentes_seccion -->
+        <section class="content d-flex justify-content-center">
+          <div class="col-12 col-md-10">
+
+            <!-- a.Tarjetas de suscripciones -->
+            <div class="card">
+              <div class="card-header bg-danger">
+                <h3 class="card-title">Nadadores</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus text-light"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="card-body">
+
+                <div class="row">
+                  <!-- Suscriptores -->
+                  <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                      <div class="inner">
+                        <h3 id="total-masculino">0</h3>        
+                        <p>Masculino</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- femenino -->
+                  <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                      <div class="inner">
+                        <h3 id="total-femenino">0</h3>        
+                        <p>Femenino</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- -----------Trofeos----------- -->
+        <!-- seccion#4.1-titulo_seccion -->
+        <section class="content-header border-bottom border-danger mb-2">
+          <div class="container-fluid">
+            <div>
+              <div>
+                <!-- titulo-seccion -->
+                <h4 class="color-texto-rojo text-center">
+                  Trofeos de la F.E.N.A
+                </h4>
+              </div>
+            </div>
+          </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- seccion#4.2-componentes_seccion -->
+        <section class="content d-flex justify-content-center">
+          <div class="col-12 col-md-10">
+
+            <!-- a.Tarjetas de suscripciones -->
+            <div class="card">
+              <div class="card-header bg-danger">
+                <h3 class="card-title">Trofeos</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus text-light"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="card-body d-lg-flex">
+
+                <!-- total-trofeos -->
+                <div class="info-box mb-3 bg-warning">
+                  <span class="info-box-icon"><i class="fas fa-tag"></i></span>
+    
+                  <div class="info-box-content">
+                    <span class="info-box-text">Trofeos</span>
+                    <span class="info-box-number" id="total-torfeos">0</span>
+                  </div>
+                 
+                </div>
+
+                <!-- total-trofeos -->
+                <div class="info-box mb-3 bg-success mx-lg-2">
+                  <span class="info-box-icon"><i class="fas fa-tag"></i></span>
+                  <!-- copas -->
+                  <div class="info-box-content">
+                    <span class="info-box-text">Copas</span>
+                    <span class="info-box-number" id="total-copas">0</span>
+                  </div>
+                  <!-- medallas -->
+                  <div class="info-box-content">
+                    <span class="info-box-text">Medallas</span>
+                    <span class="info-box-number" id="total-medallas">0</span>
+                  </div>
+                 
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- -----------Competiciones----------- -->
+        <!-- seccion#5.1-titulo_seccion -->
+        <section class="content-header border-bottom border-danger mb-2">
+          <div class="container-fluid">
+            <div>
+              <div>
+                <!-- titulo-seccion -->
+                <h4 class="color-texto-rojo text-center">
+                  Analitica de Competiciones
+                </h4>
+              </div>
+            </div>
+          </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- seccion#5.2-componentes_seccion -->
+        <section class="content d-flex justify-content-center">
+          <div class="col-12 col-md-10">
+
+            <!-- a.Tarjetas de suscripciones -->
+            <div class="card">
+              <div class="card-header bg-danger">
+                <h3 class="card-title">Competiciones</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus text-light"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="card-body d-lg-flex">
+                <!-- competiciones -->
+                <div class="info-box mb-3 bg-danger">    
+                  <div class="info-box-content">
+                    <span class="info-box-text">Nacionales</span>
+                    <span class="info-box-number" id="total-competiciones-nacionales">0</span>
+                  </div>
+                  
+                  <div class="info-box-content">
+                    <span class="info-box-text">Internacionales</span>
+                    <span class="info-box-number" id="total-competiciones-internacionales">0</span>
+                  </div>
+                </div>
+
+                <!-- competiciones-ganados -->
+                <div class="info-box mb-3 bg-info mx-lg-2">
+                  <!-- ganados-nacional -->
+                  <div class="info-box-content">
+                    <span class="info-box-text">Ganados Nacional</span>
+                    <span class="info-box-number" id="total-competiciones-ganados-nacional">0</span>
+                  </div>
+                  <!-- Ganados-internacional -->
+                  <div class="info-box-content">
+                    <span class="info-box-text">Ganados Internacional</span>
+                    <span class="info-box-number" id="total-competiciones-ganados-internacional">0</span>
+                  </div>
+                 
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </section>
+    </div>
+    
+    <!--=============#4.Footer============== -->
+    <footer class="main-footer bg-fondo-nm border-0">
+      <div>
+         <h6 class="border-top color-texto-rojo text-center pt-2"> &copy;F.E.N.A EG - Control Panel - <span class="year">2024</span></h6>
+      </div>
+    </footer>
+  </div>
+  <script src="./plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- ChartJS-Graficos -->
+  <script src="./plugins/chart.js/Chart.min.js"></script>
+  <!-- FLOT CHARTS -->
+  <script src="./plugins/flot/jquery.flot.js"></script>
+  <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+  <script src="./plugins/flot/plugins/jquery.flot.resize.js"></script>
+  <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+  <script src="./plugins/flot/plugins/jquery.flot.pie.js"></script>
+  <script src="./plugins/jquery-knob/jquery.knob.min.js"></script>
+
+  <!-- AdminLTE App --> 
+  <script src="./dist/js/adminlte.min.js"></script>
+
+  <!-- Mis Js -->
+  <script src="./dist/js/graficos.js"></script>
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FENA-Control Panel</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
+  <!-- sweetAlert2 -->
+  <link rel="stylesheet" href="./plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="./dist/css/adminlte.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="./dist/css/style.css">
+</head>
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper bg-fondo-nm">
+    <!--===========#1 Bara de navegacion ============ -->
+    <nav class="main-header navbar navbar-expand bg-fondo-nm border-0 menu-subidas">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link color-texto-nm" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item nav-tabs-nm">
+          <a class="nav-link color-texto-nm text-center" href="./bd.html?db=noticia">Noticia</a>
+        </li>
+        <li class="nav-item nav-tabs-nm">
+          <a class="nav-link color-texto-nm text-center" href="./bd.html?db=personal">personal</a>
+        </li>
+        <li class="nav-item nav-tabs-nm">
+          <a class="nav-link color-texto-nm text-center" href="./bd.html?db=trofeos">Trofeo</a>
+        </li>
+        <li class="nav-item nav-tabs-nm">
+          <a class="nav-link color-texto-nm text-center" href="./bd.html?db=nadador">Nadador</a>
+        </li>
+        <li class="nav-item nav-tabs-nm">
+          <a class="nav-link color-texto-nm text-center" href="./bd.html?db=comunicado">Comunicado</a>
+        </li>
+        <li class="nav-item nav-tabs-nm">
+          <a class="nav-link color-texto-nm  text-center" href="./bd.html?db=publicidad">Publicidad</a>
+        </li>
+      </ul>
+    </nav>  
+
+    <!-- ============= #2.Menu aside========== -->
+    <aside class="main-sidebar bg-fondo-nm elevation-4">
+      <!-- Brand Logo -->
+      <a href="/panel/dashboard.html" class="brand-link bg-componente-nm">
+        <img src="/panel/dist/img/usr.png" alt="fena Logo" class="brand-image img-circle elevation-3 img-logo-fena" style="opacity: .8">
+        <span class="brand-text p-3 text-light">FENA-Admin Panel</span>
+      </a>
+      
+      <div class="sidebar"> 
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+            <!-- componente-menu-aside -->
+            <li class="nav-item nav-tabs-nm border-bottom">
+              <a href="/panel/dashboard.html?" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt color-texto-nm"></i>
+                <p class="color-texto-nm">
+                  Dashboard
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item nav-tabs-nm border-bottom">
+              <a href="/panel/subidas.html" class="nav-link">
+                <i class="nav-icon fas fa-upload color-texto-nm"></i>
+                <p class="color-texto-nm">
+                  Subidas
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item nav-tabs-nm border-bottom">
+              <a href="/panel/bd.html" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie color-texto-nm"></i>
+                <p class="color-texto-nm">
+                  Base de datos
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item nav-tabs-nm border-bottom">
+              <a href="/panel/configuracion.html" class="nav-link">
+                <i class="nav-icon fas fa-tools color-texto-nm"></i>
+                <p class="color-texto-nm">
+                  Configuracion
+                </p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- -------------------Tablas------------------------- -->
+    <!-- =========== #3. Contener Principal - Tabla-Noticias====== -->
+    <div class="content-wrapper bg-fondo-nm d-none" id="seccion-bd-noticia">
+      <!-- seccion#1-titulo_seccion -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <!-- titulo-seccion -->
+              <h6 class="color-texto-rojo text-center">
+               BD Noticias
+              </h6>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+      <!-- seccion#2-componentes_seccion -->
+      <section class="content">
+        <div class="card">
+          <div class="card-body table-responsive p-0 menu-subidas">
+
+            <table class="table table-hover text-nowrap">
+              <thead>
+                <tr class="bg-fondo-nm color-texto-nm text-center">
+                  <th>#</th>
+                  <th>fecha</th>
+                  <th>Autor</th>
+                  <th>Categoria</th>
+                  <th>Titulo</th>
+                  <th>Estado</th>
+                  <th>Previsualizar</th>
+                  <th>Categoria</th>
+                  <th>Borrar</th>
+                  <th>Editar</th>
+                </tr>
+              </thead>
+              <tbody id="tabla-componente-noticias">
+                <tr class="text-center">
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+
+      </section>
+    </div>
+    
+    <!-- =========== #4. Contener Principal-tabla personal====== -->
+    <div class="content-wrapper bg-fondo-nm d-none" id="seccion-bd-personal">
+      <!-- seccion#1-titulo_seccion -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <!-- titulo-seccion -->
+              <h6 class="color-texto-rojo text-center">
+               BD Personal
+              </h6>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+      <!-- seccion#2-componentes_seccion -->
+      <section class="content">
+        <div class="card">
+          <div class="card-body table-responsive p-0 menu-subidas">
+
+            <table class="table table-hover text-nowrap">
+              <thead>
+                <tr class="bg-fondo-nm color-texto-nm text-center">
+                  <th>#</th>
+                  <th>Nombre</th>
+                  <th>Apellidos</th>
+                  <th>Funcion</th>
+                  <th>Mas Informacion</th>
+                  <th>Previsualizar</th>
+                  <th>Borrar</th>
+                  <th>Editar</th>
+                </tr>
+              </thead>
+              <tbody id="tabla-personal">
+                <tr class="text-center">
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <button class="btn btn-success" data-toggle="modal" data-target="#previsualizar-noticia">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="btn btn-primary">
+                      <i class="fa fa-edit"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+
+      </section>
+    </div>
+
+     <!-- =========== #5. Contener Principal-tabla comunicado====== -->
+     <div class="content-wrapper bg-fondo-nm d-none" id="seccion-bd-comunicado">
+      <!-- seccion#1-titulo_seccion -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <!-- titulo-seccion -->
+              <h6 class="color-texto-rojo text-center">
+               BD Comunicados
+              </h6>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+      <!-- seccion#2-componentes_seccion -->
+      <section class="content">
+        <div class="card">
+          <div class="card-body table-responsive p-0 menu-subidas">
+
+            <table class="table table-hover text-nowrap">
+              <thead>
+                <tr class="bg-fondo-nm color-texto-nm text-center">
+                  <th>#</th>
+                  <th>Titulo</th>
+                  <th>publicar</th>
+                  <th>Previsualizar</th>                  
+                  <th>Borrar</th>
+                  <th>Editar</th>
+                </tr>
+              </thead>
+              <tbody id="tabla-comunicado">
+                <tr class="text-center">
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <input type="checkbox" id="publicar-comunicado">
+                  </td>
+                  <td>
+                    <button class="btn btn-success">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="btn btn-primary">
+                      <i class="fa fa-edit"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+
+      </section>
+    </div>
+
+    <!-- =========== #6. Contener Principal-tabla Publicidad====== -->
+    <div class="content-wrapper bg-fondo-nm d-none" id="seccion-bd-publicidad">
+      <!-- seccion#1-titulo_seccion -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <!-- titulo-seccion -->
+              <h6 class="color-texto-rojo text-center">
+               BD Publicidad
+              </h6>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+      <!-- seccion#2-componentes_seccion -->
+      <section class="content">
+        <div class="card">
+          <div class="card-body table-responsive p-0 menu-subidas">
+
+            <table class="table table-hover text-nowrap">
+              <thead>
+                <tr class="bg-fondo-nm color-texto-nm text-center">
+                  <th>#</th>
+                  <th>Empresa</th>
+                  <th>Titulo</th>
+                  <th>Previsualizar</th>
+                  <th>Borrar</th>
+                </tr>
+              </thead>
+              <tbody id="tabla-pub">
+                <tr class="text-center">
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <button class="btn btn-success" data-toggle="modal" data-target="#modal-limpio">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="btn btn-danger" data-toggle="modal">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+
+      </section>
+    </div>
+
+    <!-- =========== #N. Contener Principal-Seccion no disponible====== -->
+    <div class="content-wrapper bg-fondo-nm d-none" id="seccion-bd-indisponible">
+      <!-- seccion#1-titulo_seccion -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <!-- titulo-seccion -->
+              <h6 class="color-texto-rojo text-center">
+               Seccion no disponible
+              </h6>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+    </div>
+
+    <!-- ---------------------Modales------------------- -->
+    <!-- modal#1-previsualizar noticia -->
+    <div class="previsualizar-noticia">
+      <div class="modal fade" id="previsualizar-noticia">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content bg-fondo-nm p-2 previsualizar-noticia">
+
+            <div class="justify-content-center">
+              <div class=" d-flex justify-content-center my-2">
+                <img src="./dist/img/usr.png" alt="img_portada" class="w-50 preve-img-portada">
+              </div>
+  
+              <h4 class="color-texto-nm text-center prev-titulo"></h4>
+              <h4 class="text-center color-texto-nm fw-bold personal-apellidos"></h4>
+              
+              <p class="color-texto-nm text-center mt-2 prev-parrafo"></p>
+              
+              <div class="container-parrafos">
+              </div>
+
+              <div class="d-flex justify-content-center mt-2 prev-img-parafo-container">
+                <img src="./dist/img/logo.png" alt="" class="w-25 prev-img-parafo d-none">
+              </div>
+              
+              <h4 class="color-texto-nm text-center mt-2 prev-subtitulo"></h4>
+  
+              <p class="color-texto-nm text-center mt-2 prev-text-subtitulo"></p>
+              
+              <p class="text-center fw-bold color-texto-nm">
+                <span class="text-autor">Autor:</span>
+                <span class="color-texto-rojo fs-2 prev-autor"></span>
+              </p>
+              <p class="color-texto-nm text-center mt-2 personal-info"></p>
+            </div>
+          </div>
+          
+          <div class="modal-footer d-flex justify-content-center personal-modal-salir">
+            <button type="button" class="btn btn-danger col-12 col-md-8" data-bs-dismiss="modal">Salir</button>
+          </div>
+
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+    </div>
+
+     <!-- modal#2-publicar noticia -->
+     <div class="publicar-noticia">
+      <div class="modal fade" id="publicar-noticia">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content bg-fondo-nm">
+
+            <div class="justify-content-center p-2">
+              <p class="color-texto-rojo text-center">
+                <small>Si publica esta noticia, sera visible en la pagina <span class="color-texto-nm">fenaeg.com</span></small>
+              </p>
+              <div class="d-flex justify-content-center">
+                <input type="text" placeholder="id de noticia" class="input-id-noticia">
+              </div>
+              <h6 class="color-texto-nm text-center my-2" id="alert-publicar-noticia">
+                 Desea Publicar esta noticia?
+              </h6>
+              <p class="color-texto-nm text-center show-id"></p>
+            </div>
+
+            <div class="modal-footer d-flex justify-content-center">
+              <button type="button" class="btn btn-success col-12 col-md-8" id="publicar-noticia">
+                <span class="txt-publicar">Publicar</span>
+                <img src="./dist/img/load.svg" alt="" style="width: .8rem;" class="d-none  show-cargando">
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+    </div>
+
+      <!-- modal#5-ocultar noticia -->
+     <div class="ocultar-noticia">
+      <div class="modal fade" id="ocultar-noticia">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content bg-fondo-nm">
+
+            <div class="justify-content-center p-2">
+              <p class="color-texto-rojo text-center">
+                <small>Si ocultar esta noticia, no sera visible en la pagina <span class="color-texto-nm">fenaeg.com</span></small>
+              </p>
+              <div class="d-flex justify-content-center">
+                <input type="text" placeholder="id de noticia" class="input-id-noticia-ocultar">
+              </div>
+              <h6 class="color-texto-nm text-center my-2" id="alert-ocultar-noticia">
+                 Desea ocultar esta noticia?
+              </h6>
+              <p class="color-texto-nm text-center show-id"></p>
+            </div>
+
+            <div class="modal-footer d-flex justify-content-center">
+              <button type="button" class="btn btn-success col-12 col-md-8" id="ocultar-noticia">
+                <span class="txt-ocultar">Ocultar</span>
+                <img src="./dist/img/load.svg" alt="" style="width: .8rem;" class="d-none  show-cargando-ocultar">
+              </button>              
+            </div>            
+          </div>
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+    </div>
+
+     <!-- modal#5-Limpio -->
+     <div class="modal-limpio">
+      <div class="modal fade" id="modal-limpio">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content bg-fondo-nm">
+            <div class="justify-content-center p-2" id="modal-limpio-contenido">
+              <div class=" d-flex justify-content-center my-2">
+                <img src="./dist/img/usr.png" alt="img_portada" class="w-50 preve-img-pub d-none">
+              </div>
+              <div class="seccion-modal-text">
+                <h4 class="color-texto-nm text-center prev-titulo-pub"></h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+    </div>
+
+    <!-- seccion#3-footer -->
+    <footer class="main-footer bg-fondo-nm border-0">
+      <div>
+         <h6 class="border-top color-texto-rojo text-center pt-2"> &copy;F.E.N.A EG - Control Panel - <span class="year">2024</span></h6>
+      </div>
+    </footer>
+  </div>
+  <script src="./plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- ChartJS-Graficos -->
+  <script src="./plugins/chart.js/Chart.min.js"></script>
+  <!-- sweetAlert2 -->
+  <script src="./plugins/sweetalert2/sweetalert2.min.js"></script>
+  <!-- AdminLTE App --> 
+  <script src="./dist/js/adminlte.min.js"></script>
+
+  <script src="./dist/js/app.js" type="module"></script>
+  <script src="./dist/js/bd.js" type="module"></script>
+</body>
+</html>
