@@ -168,9 +168,23 @@ export function fechaHoy(){
 //>>>>>>>mostrar comunicados
 function insertComunicados(){
     let componente = ''
+<<<<<<< HEAD
     const listaAvisos = document.querySelector('.content-avisos');
     //Cargar  comunicado en Local o descargar en Servidor
     localStorage.getItem('avisosLocal') == null ? getAvisos() : cargarAvisos();
+=======
+    avisos.forEach(aviso => {        
+        componente += `    
+            <div class="avisos">
+                <small class="text-dark px-3">
+                    ${aviso.aviso} //
+                </small>
+            </div>
+        `
+    });
+    // console.log(componente)
+    listaAvisos.innerHTML = componente;
+>>>>>>> 7eb57924ff105ef40732120006120803cfab8f0d
     
     async function getAvisos(){
         let resComunicado = await comunicados();
@@ -220,20 +234,6 @@ function insertComunicados(){
 }
 
 function init(){
-    //=====>Global-Navegacion
-    const navBar = document.getElementById('navigation')  
-
-    //inyectar organigrama
-    const listaPersonal = document.createElement('LI');
-    listaPersonal.innerHTML = `<a href="./fena.html?section=personal">Lista del Personal</a>`;
-    navBar.children[1].children[1].appendChild(listaPersonal)
-
-    //inyectar enlace historial
-    const participaciones = document.createElement('LI');
-    participaciones.innerHTML = `<a href="./competiciones.html?section=memorias">memoria de participaciones</a>`
-    navBar.children[4].children[1].appendChild(participaciones)
-
-
     // =====>Solo competiciones.html
     if(location.pathname.indexOf('competiciones.html') != -1){
         let section =  searchParamURL();
@@ -253,7 +253,7 @@ function init(){
     }
 
      // =====>Solo fena.html
-     if(location.pathname.indexOf('fena.html') != -1){
+    if(location.pathname.indexOf('fena.html') != -1){
         let section =  searchParamURL();
          //Ver Seccion Memoria de participaciones
          if(section[0].section == 'nosotros'){
@@ -265,7 +265,7 @@ function init(){
         if(section[0].section == 'personal'){
             removeDnone('id','fena-personal');
         }
-     }
+    }
 
 }
 
