@@ -167,12 +167,11 @@ export function fechaHoy(){
 
 //>>>>>>>mostrar comunicados
 function insertComunicados(){
-    let componente = ''
-<<<<<<< HEAD
+    let componente = '';
     const listaAvisos = document.querySelector('.content-avisos');
     //Cargar  comunicado en Local o descargar en Servidor
     localStorage.getItem('avisosLocal') == null ? getAvisos() : cargarAvisos();
-=======
+
     avisos.forEach(aviso => {        
         componente += `    
             <div class="avisos">
@@ -184,7 +183,7 @@ function insertComunicados(){
     });
     // console.log(componente)
     listaAvisos.innerHTML = componente;
->>>>>>> 7eb57924ff105ef40732120006120803cfab8f0d
+
     
     async function getAvisos(){
         let resComunicado = await comunicados();
