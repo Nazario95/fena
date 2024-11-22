@@ -3,7 +3,7 @@
     // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-analytics.js";
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";    
     import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
-    import {getFirestore,collection,getDocs, addDoc,updateDoc, doc, getDoc, deleteDoc} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+    import {getFirestore,collection,getDocs, addDoc,updateDoc, doc, getDoc, deleteDoc, query, where } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
     import {getStorage, ref, getDownloadURL,uploadBytes, deleteObject} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-storage.js";
 
     const firebaseConfig = {
@@ -21,7 +21,7 @@
     //const analytics = getAnalytics(app);
 
 //=============>crud auth
-    // const auth = getAuth(app);
+    const auth = getAuth(app);
 
     //***********1.Conexion con app de sesion    
     // console.log('-----check: app de login. funciona-----')
@@ -62,41 +62,32 @@
     //         console.log(email,password)
     //         iniciarSesion(email,password);
     //     });
-        // function iniciarSesion(email,password){
-        //     signInWithEmailAndPassword(auth, email, password)
-        //     .then((userCredential) => {
-        //         var user = userCredential.user;
-        //         localStorage.setItem('session',user.email);
-        //         location.href = './app-tuhostal.html'
-        //         // console.log(user.email);
-        //         // console.log('Iniciando sesion');
-        //     })
-        //     .catch((error) => {
-        //         var errorCode = error.code;
-        //         var errorMessage = error.message;
-        //         console.log(errorCode);
-        //         console.log(errorMessage);
 
-        //         if(errorCode === 'auth/invalid-email'){
-        //             alert('email invalido');
-        //         }
-        //     });
-        // }
+
+    export async function iniciarSesion(email,password){  
+        try {
+            let res = await signInWithEmailAndPassword(auth, email, password);
+            return res;
+        } catch (error) {
+            const errorCode = error.code;
+            // const errorMessage = error.message;
+            // console.log(errorCode)
+            if(errorCode == 'auth/invalid-credential'){
+                alert('Datos de sesion invalidos')
+            }
+            else{alert('Ha ocurrido un error, recargue la paguina e intentelo de nuevo')}
+        }
+    }
     // }
 
     //**************4. Cerar sesion */
-    // if(document.getElementById('log-out')){
-    //     let logOut = document.getElementById('log-out');	
-    //     logOut.addEventListener('click', ()=>{
-    //         auth.signOut()
-    //             .then(()=>{
-    //                 // console.log('Cerrando Session');
-    //                 localStorage.clear()
-    //                 location.href = './index.html';
-    //             })
-    //             .catch(error=>{console.log(error)});
-    //     });
-    // }
+    export function logOut(){
+        auth.signOut()
+            .then(()=>{
+                location.href = './login/';
+            })
+            .catch(error=>{console.log(error)});
+    }
     
 
 //=================>CRUD FIRESTORE
@@ -126,6 +117,20 @@
         }
 
     //---------> CONSULTAR DATOS
+    
+        export async function consulta(consultarDatos,ruta) {
+            // console.log(consultarDatos)
+            // console.log(`${Object.keys(consultarDatos)[0]}`)
+            // console.log(`${Object.values(consultarDatos)[0]}`)
+            let res
+            try {
+                res = await getDocs(query(collection(db,ruta,),  where(`${Object.keys(consultarDatos)[0]}`, "==", `${Object.values(consultarDatos)[0]}`)));
+                return res
+            } catch (error) {
+                return error
+            }
+        }
+        
         export async function coleccionDatos(ruta) {
             const res = await getDocs(collection(db,ruta));
             return res;

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fena | Panel de configuracion</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="./../plugins/fontawesome-free/css/all.min.css">
+  <!-- sweetAlert2 -->
+  <link rel="stylesheet" href="./../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="./../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="./../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="./../dist/css/style.css">
+</head>
+<body class="hold-transition login-page bg-fondo-nm">
+<div class="login-box">
+  <div class="login-logo">
+    <img src="./../dist/img/logo.png" alt="">
+  </div>
+
+  <div class="card">
+    <div class="card-body login-card-body bg-dark">
+      <h5 class="login-box-msg">
+          Panel de Administracion
+      </h5>
+
+      <form>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control usuario" placeholder="usuario">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control psw" placeholder="contraseña" autocomplete="off">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <button type="submit" class="btn btn-danger btn-block" id="btn-access">Acceder</button>
+          <p class="mb-1 text-center mt-1" id="naz">
+            <a href="#" class="text-danger">contraseña olvidada</a>
+          </p>          
+        </div>
+      </form>
+  </div>
+</div>
+<!-- /.login-box -->
+</body>
+<script src='../dist/js/login.js' type="module"></script>
+<script src='../dist/js/sesion.js' type="module"></script>
+</html>

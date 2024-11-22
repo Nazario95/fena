@@ -1,6 +1,6 @@
 import { avisos, comunicados, noticias, getImg, getIdUpdates} from "./switch-data.js";
 //permitir carga de imagenes
-export const loadImg = true;
+export const loadImg = false;
 
 document.addEventListener("DOMContentLoaded",()=>{
     checkUpdate();    
@@ -18,7 +18,7 @@ async function checkUpdate(){
         getActualizaciones.forEach(versionActual=>{
             versionRemota[versionActual.id] = versionActual.data()        
         })
-        console.log(versionRemota);
+        // console.log(versionRemota);
         crearVersionLocal()
     }   
 
@@ -57,7 +57,7 @@ async function checkUpdate(){
             // console.log('remoto==>',remoto)
             // console.log('local==>',local)
             if(remoto == local){
-                console.log('No es Necesario Actualiza')
+                // console.log('No es Necesario Actualiza')
                 estadoDeActualizacion++
             }
             else if(remoto != local){
@@ -82,9 +82,15 @@ async function checkUpdate(){
             localStorage.removeItem('noticiasLocalData');
             return true;
         }
+        else if(tipo == 'personal'){
+            return true;
+        }
+        else if(tipo == 'pub'){
+            return true;
+        }
     }
 
-    console.log(estadoDeActualizacion)
+    // console.log(estadoDeActualizacion)
     if(estadoDeActualizacion == 4){
         getNoticias()
         insertComunicados();    
@@ -92,7 +98,6 @@ async function checkUpdate(){
         init()
     }
 }
-
 
 //>>>>>>>Cargar Noticias
 async function  getNoticias() {
@@ -231,8 +236,8 @@ function insertComunicados(){
     }    
     listaAvisos.innerHTML = componente;    
 }
-
 function init(){
+    
     // =====>Solo competiciones.html
     if(location.pathname.indexOf('competiciones.html') != -1){
         let section =  searchParamURL();
@@ -252,13 +257,13 @@ function init(){
     }
 
      // =====>Solo fena.html
-    if(location.pathname.indexOf('fena.html') != -1){
+    if(location.pathname.indexOf('fena.html') != -1){        
         let section =  searchParamURL();
          //Ver Seccion Memoria de participaciones
          if(section[0].section == 'nosotros'){
             removeDnone('id','fena-nosotros');
         }
-        if(section[0].section == 'junta'){
+        if(section[0].section == 'junta'){            
             removeDnone('id','fena-junta');
         }
         if(section[0].section == 'personal'){

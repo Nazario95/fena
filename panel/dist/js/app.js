@@ -1,4 +1,4 @@
-import { actualizar } from "./firebase.js";
+import { actualizar, consulta, logOut } from "./firebase.js";
 
 //>>>>>>>sweet alert
 export function alerta(type,msg){
@@ -72,3 +72,68 @@ export function alerta(type,msg){
             cargando.classList.remove('d-none');
         })
     }
+
+    if(location.pathname.includes('dashboard.html')){
+        if(localStorage.getItem('usr')){
+            document.querySelector('.user-name').textContent = localStorage.getItem('usr').split('@')[0];
+        }
+        const btnLogOut = document.querySelector('.log-out');
+        btnLogOut.addEventListener('click',()=>{
+            confirm('Cerra sesion?')?cerarSesion():''
+        })
+    }
+
+    function cerarSesion(){
+        localStorage.removeItem('usr');
+        logOut()
+    }
+
+    //=========Seguridad
+    !location.pathname.includes('login')?sesionStatus():location.href = './login';
+
+    async function sesionStatus(){
+        //check token and usr
+        if(localStorage.getItem('token_access')){
+            let tokenLocalValue = localStorage.getItem('token_access');
+            let res = await consulta({token:tokenLocalValue},'hwid');
+            if(res.empty == false){
+                res.forEach(doc=>{
+                    if(doc.data().token != tokenLocalValue){
+                        localStorage.clear();
+                        location.href='./?access=null';
+                    }
+                })
+            }
+            else  if(res.empty){
+                localStorage.clear();
+                location.href='./?access=null';
+            }
+        }
+        else {
+            localStorage.clear();
+            location.href='./?access=null';
+        }
+
+        //check usr saved
+        if(localStorage.getItem('usr')){
+            let usrLocalValue = localStorage.getItem('usr').split('@')[0];
+            let res = await consulta({usr:usrLocalValue},'admin_usr');
+            if(res.empty == false){
+                res.forEach(doc=>{
+                    if(doc.data().usr != usrLocalValue){
+                        localStorage.clear();
+                        location.href='./?access=null';
+                    }
+                })
+            }
+            else  if(res.empty){
+                localStorage.clear();
+                location.href='./?access=null';
+            }
+        }
+        else{
+            localStorage.clear();
+            location.href='./?access=null';
+        }
+    }
+    setInterval(()=>{sesionStatus()},1000)

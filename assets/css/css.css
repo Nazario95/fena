@@ -52,6 +52,17 @@
 .logo-escudo-eg-big{
     width: 100%;
 }
+.logo-fena{
+  max-width: 100%;
+  scale: 1.2; 
+}
+.logo-fena-menu{
+  max-width: 20%;
+}
+
+.logo-fena-footer{
+  max-width: 90%;
+}
 
 /* Testimonial */
 .testimonial-section {
