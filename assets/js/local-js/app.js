@@ -1,6 +1,6 @@
 import { avisos, comunicados, noticias, getImg, getIdUpdates} from "./switch-data.js";
 //permitir carga de imagenes
-export const loadImg = false;
+export const loadImg = true;
 
 document.addEventListener("DOMContentLoaded",()=>{
     checkUpdate();    
@@ -93,8 +93,7 @@ async function checkUpdate(){
     // console.log(estadoDeActualizacion)
     if(estadoDeActualizacion == 4){
         getNoticias()
-        insertComunicados();    
-        fechaActual()//mostrar fecha actual
+        insertComunicados();
         init()
     }
 }
@@ -108,64 +107,6 @@ async function  getNoticias() {
 
 
 // *******MODIFICACIONES DEL DOM*****
-//>>>>>>>>>>Mostrar fehca actual
-function fechaActual(){
-    const days = {
-        'Lunes':'Mon',
-        'Martes':'Tue',
-        'Miercoles':'Wed',
-        'Jueves':'Thu',
-        'Viernes':'Fri',
-        'Sabado':'Sat',
-        'Domingo':'Sun',
-    }
-    const months = {
-        'Enero':'Jan',
-        'Febrero':'Feb',
-        'Marzo':'Mar',
-        'Abril':'Apr',
-        'Mayo':'May',
-        'Junio':'Jun',
-        'Julio':'Jul',
-        'Agosto':'Aug',
-        'Septiembre':'Sep',
-        'Octubre':'Oct',
-        'Noviembre':'Nov',
-        'Diciembre':'Dec',
-    }
-    //get full Date
-    const localDate = new Date(Date.now()).toString().split(' ');
-    // console.log(localDate);
-    
-    let dia = localDate[0] ; //dia local en ingles
-    let mes = localDate[1] ; // mes local, en ingles
-    let diaNum = localDate[2] ; //dia local, numerico    
-    let axo = localDate[3] ; // axo local
-
-    //Show Date Data
-    let showDay=''
-    let showMonth=''
-
-    //show Date
-    for(let key in days){
-        if(days[key] == dia){
-            // console.log(key)
-            showDay = key            
-        }
-    }
-    //Show month
-    for(let key in months){
-        if(months[key] == mes){
-            // console.log(key);
-            showMonth = key;
-        }
-    }
-
-    let showDate = `${showDay}, ${diaNum} de ${showMonth} de ${axo}`;
-    //Show Date in DOM
-    // console.log(showDate);
-    document.querySelector('.date-today').textContent = showDate;
-}
 export function fechaHoy(){
     return new Date(Date.now()).toISOString().split('T')[0]
 }

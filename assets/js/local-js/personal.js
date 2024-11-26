@@ -1,4 +1,5 @@
 import { coleccionDatos, downMultimedia } from "../../../panel/dist/js/firebase.js"
+import { loadImg } from "./app.js";
 
 //pabras clave
 // const palabraClave = [
@@ -65,7 +66,7 @@ function inyectarPersonal(){
         if(document.querySelector(`.img-${personal.cargo}`)){
             // console.log(document.querySelector(`.img-${personal.cargo}`));
             //imagen
-            urlImg(personal.nomImg, personal.cargo)
+            loadImg ? urlImg(personal.nomImg, personal.cargo) : '';
         }
     })
 }

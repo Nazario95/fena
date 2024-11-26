@@ -14,7 +14,6 @@ else{
     mostrarNoticia()
 }
 
-
 function mostrarNoticia(){
     console.log('mostrando noticias');
     let noticiasLocal = JSON.parse(localStorage.getItem('noticiasLocalData'))
