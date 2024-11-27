@@ -1,4 +1,4 @@
-import { avisos, comunicados, noticias, getImg, getIdUpdates} from "./switch-data.js";
+import {avisos, comunicados, noticias, getImg, getIdUpdates} from "./switch-data.js";
 //permitir carga de imagenes
 export const loadImg = true;
 
@@ -117,36 +117,29 @@ function insertComunicados(){
     const listaAvisos = document.querySelector('.content-avisos');
     //Cargar  comunicado en Local o descargar en Servidor
     localStorage.getItem('avisosLocal') == null ? getAvisos() : cargarAvisos();
-
-    avisos.forEach(aviso => {        
-        componente += `    
-            <div class="avisos">
-                <small class="text-dark px-3">
-                    ${aviso.aviso} //
-                </small>
-            </div>
-        `
-    });
     // console.log(componente)
-    listaAvisos.innerHTML = componente;
-
-    
+    listaAvisos.innerHTML = componente;    
     async function getAvisos(){
         let resComunicado = await comunicados();
+        // console.log(resComunicado)
         resComunicado.empty ? avisosPredeterminados() : cargarAvisoEnLocal(resComunicado);
-        cargarAvisos()
     } 
     
     //----------> Cargar avisos en local
     function cargarAvisoEnLocal(avisos){
         let comunicados = [];
         avisos.forEach(aviso =>{
-            comunicados.push({
-                id:aviso.id,
-                aviso:aviso.data()
-            });
+            if(aviso.data().publicar == true){
+                comunicados.push({
+                    id:aviso.id,
+                    aviso:aviso.data(),
+                    publicar:aviso.publicar
+                });
+            }            
         });
+        console.log(comunicados)
         localStorage.setItem('avisosLocal',JSON.stringify(comunicados));
+        cargarAvisos()
     }
     // console.log(listaAvisos);    
     
@@ -161,24 +154,36 @@ function insertComunicados(){
                 </div>
             `
         });
+        // console.log(componente)
+        listaAvisos.innerHTML = componente;    
     }
     //----------> Si Hay Comunicados
     function cargarAvisos(){
-        let avisosLocal = JSON.parse(localStorage.getItem('avisosLocal'));
+        let avisosLocal = localStorage.getItem('avisosLocal') != null ? JSON.parse(localStorage.getItem('avisosLocal')):'';
+
         avisosLocal.forEach(aviso => { 
-            componente += `    
-                <div class="avisos">
-                    <small class="text-dark px-3">
-                        ${aviso.aviso.comunicado} //
-                    </small>
-                </div>
-            `
+            if(aviso.aviso.publicar == true){
+                componente += `    
+                    <div class="avisos">
+                        <small class="text-dark px-3">
+                            ${aviso.aviso.comunicado} //
+                        </small>
+                    </div>
+                 `
+            }
+            
         });
+        if(componente == ''){
+            localStorage.removeItem('avisosLocal');
+            avisosPredeterminados()
+        }
+        else{
+            listaAvisos.innerHTML = componente;
+        }   
     }    
-    listaAvisos.innerHTML = componente;    
-}
-function init(){
     
+}
+function init(){    
     // =====>Solo competiciones.html
     if(location.pathname.indexOf('competiciones.html') != -1){
         let section =  searchParamURL();

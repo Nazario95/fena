@@ -22,8 +22,7 @@ export function checkAccess(){
             else if(clave == 'access' && valor == 'null'){
                 accessDenied();
             }
-        })
-    }
+        });    }
     else  accessDenied();
 }
   
@@ -52,9 +51,7 @@ async function checkTokenStateLocal(){
 
 function accessDenied(){
     localStorage.clear();
-    document.querySelector('body').innerHTML = `
-        <h3>404 Pagina no encontrada</h3>       
-    `
+    location.href = './wd-login.html'
 }
 
 // =========Funciones Globales

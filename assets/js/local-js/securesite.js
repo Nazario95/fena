@@ -4,8 +4,8 @@ import {consulta} from "../../../panel/dist/js/firebase.js"
 const token = localStorage.getItem('token_access');
 const usr = localStorage.getItem('usr');
 
-console.log(token)
-console.log(usr)
+// console.log(token)
+// console.log(usr)
 
 token!=null&&usr!=null?verificarAcesso():'';
 

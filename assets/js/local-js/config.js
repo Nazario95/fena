@@ -81,13 +81,8 @@ function datosContacto(){
 }
 
 //3.PAGINAS DESABILITADAS
-    const  listaMenuHeaderOculto = ['/competiciones','/equipos','/normativa']; 
-    const enlace = location.pathname.split('.')[0];
-    // console.log(enlace)
-    // console.log(listaMenuHeaderOculto.indexOf(enlace))
-    if(listaMenuHeaderOculto.indexOf(enlace) >= 0){
-        location.href = './404.html'
-    }
-
-//4. DESBILITAR LA SECCION DE EVENTOS
+    const  listaMenuHeaderOculto = ['competiciones.html','equipo.html','normativa.html']; 
+    listaMenuHeaderOculto.forEach(paginaOculta => {
+        location.pathname.split('/').indexOf(paginaOculta) >=0 ? location.href='./404.html':''
+    });
     
