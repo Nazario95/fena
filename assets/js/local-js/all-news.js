@@ -19,7 +19,7 @@ function init(){
     descargarNoticias(); 
 
     // console.log(paginacion)
-    console.log(searchParamURL()[0].section)
+    // console.log(searchParamURL()[0].section)
 
     //>>>>>>>>>check parametro page en url
     searchParamURL()[1] == undefined ? location.href = `./noticias.html?section=${searchParamURL()[0].section}&page=1`:'';
@@ -118,13 +118,13 @@ function mostrarFiltrado(paginacion,totalNoticias,seccion){
 //-----------Funciones Globales
     //filtrar noticias
     function filtrarNews(noticias,categoria){
-        console.log(categoria)
+        // console.log(categoria)
        // console.log(noticias)
         let noticiasFIltradas = [];
         noticias.forEach(filtro => {
             filtro.noticia.categoria == categoria.toLowerCase() ? noticiasFIltradas.push(filtro) : '';
         });
-        console.log(noticiasFIltradas);
+        // console.log(noticiasFIltradas);
         return noticiasFIltradas;
     }
 

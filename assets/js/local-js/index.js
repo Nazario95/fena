@@ -3,21 +3,21 @@ import {getImg, noticias} from "./switch-data.js";
 //Check Noticias Local
 if(localStorage.getItem('noticiasLocalData') == null ){
     async function getNoticias() {
-        console.log('Cargando en remoto');
+        // console.log('Cargando en remoto');
         let res = await noticias();
         res == true ? mostrarNoticia() : '';
     }
     getNoticias()
 }
 else{
-    console.log('Cargando en local');
+    // console.log('Cargando en local');
     mostrarNoticia()
 }
 
 function mostrarNoticia(){
-    console.log('mostrando noticias');
+    // console.log('mostrando noticias');
     let noticiasLocal = JSON.parse(localStorage.getItem('noticiasLocalData'))
-    console.log(noticiasLocal);
+    // console.log(noticiasLocal);
 
     //------>SECCION#1.3. NOTICIAS IMPORTANTES DE 1-3
         let filtroDestacados = [];

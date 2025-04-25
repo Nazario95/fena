@@ -18,7 +18,7 @@ async function verificarAcesso(){
 }
 //mostrar enlace
 function enlacePanel(){
-    console.log('inyectando enlace al panel');
+    // console.log('inyectando enlace al panel');
     const footer = document.querySelector('.footer-pera');
     //texto adminitracion
     let panelText = document.createElement('p')

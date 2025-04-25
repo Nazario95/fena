@@ -11,11 +11,11 @@ export function checkAccess(){
         parrametroUrl.forEach((valor,clave)=>{ 
             //verifiar equipo con token           
             if(clave == 'access' && valor != 'admin' && valor != 'null'){
-                console.log('token autorizado ==>',valor);
+                // console.log('token autorizado ==>',valor);
             }
             //generar nuevo token de acceso
             else if(clave == 'access' && valor == 'admin'){
-                console.log('Generar nuevo token');
+                // console.log('Generar nuevo token');
                 generarNuevoToken()
             }
             //equipo no autorizado
@@ -58,7 +58,7 @@ function accessDenied(){
     function generarNuevoToken(){
         let usr  = prompt('user')
         let psw  = prompt('password')
-        // console.log(res1,res2);
+        
         usr&&psw?checkCredentials(usr,psw):accessDenied();
     }
 
@@ -67,11 +67,12 @@ function accessDenied(){
         consultar['usr'] = usr;
         consultar['psw'] = psw;
 
-        console.log(consultar);
+        // console.log(consultar);
 
         let res = await consulta(consultar,'admin_usr');        
         if(res.empty){
             accessDenied()
+            // console.log(res)
         }
         else{
             // guardarColeccion()

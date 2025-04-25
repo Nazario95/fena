@@ -3,3 +3,14 @@ Doc
 sobra
 readme.txt
 elements.html
+.firebase
+.qodo
+.vscode
+.github
+public
+.firebaserc
+firebase.json   
+firestore.indexes.json
+firestore.rules
+storage.rules
+

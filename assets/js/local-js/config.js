@@ -82,7 +82,29 @@ function datosContacto(){
 
 //3.PAGINAS DESABILITADAS
     const  listaMenuHeaderOculto = ['competiciones.html','equipo.html','normativa.html']; 
-    listaMenuHeaderOculto.forEach(paginaOculta => {
-        location.pathname.split('/').indexOf(paginaOculta) >=0 ? location.href='./404.html':''
+    listaMenuHeaderOculto.forEach(paginaOculta => {        
+        location.pathname.split('/').indexOf(paginaOculta) >=0 ? mostrar404():''
+        
+
     });
+    //FILTRO DE PAGINA
+    function mostrar404(){        
+        //competiciones.html
+        if(location.pathname == '/competiciones.html'){
+            console.log(location.search.split('=')[1])
+            //reglas
+            location.search.split('=')[1] == 'masculino' ? location.href='./404.html':
+            location.search.split('=')[1] == 'femenino' ? location.href='./404.html':
+            location.search.split('=')[1] == 'first-division' ? location.href='./404.html':
+            location.search.split('=')[1] == 'second-division' ? location.href='./404.html':
+            location.search.split('=')[1] == 'young-division' ? location.href='./404.html':''
+        }
+        else if(location.pathname == '/equipo.html'){
+            location.href='./404.html'
+        }
+        else if(location.pathname == '/normativa.html'){
+             location.href='./404.html'
+        }
+        // location.href='./404.html'
+    }
     

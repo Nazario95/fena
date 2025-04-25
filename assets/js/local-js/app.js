@@ -248,7 +248,7 @@ function init(){
 
     //Cargar Imagenes en pagina
     export function  cargarImg(pagina,seccion) {
-        console.log('cargando img')
+        // console.log('cargando img')
         // console.log(pagina,seccion)
         //-------> Pagina Index
         if(pagina == 'index'){
@@ -280,7 +280,7 @@ function init(){
                 initDescargaImg(imgNotcias);
         }
         function initDescargaImg(imagenes){
-            console.log(imagenes)
+            // console.log(imagenes)
             imagenes.forEach(srcImg=>{
                 let nomImg = srcImg.getAttribute('id');
                 let descargarImg = async() => {

@@ -1,6 +1,6 @@
 import { cargarImg, loadImg, searchParamURL } from "./app.js";
 
-console.log(searchParamURL())
+// console.log(searchParamURL())
 let idNoticia = searchParamURL()[0].news;
 let noticias = localStorage.getItem('noticiasLocalData')? 
                 JSON.parse(localStorage.getItem('noticiasLocalData')) :
@@ -26,7 +26,7 @@ function mostrarNoticia(noticia){
             idImgParrafo =  imgParafo
         }        
     });
-    console.log(idImgParrafo)
+    // console.log(idImgParrafo)
     //#2-->Crear parrafos
     let componenteParrafo = '';
     let inyectarImgParafo = Math.round(parafos.length / 2)+1;//zona de inyeccion de img parrafo
