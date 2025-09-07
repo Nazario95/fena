@@ -43,7 +43,7 @@ function mostrarNoticia(noticia){
                 ${idImgParrafo != undefined && parafoImg == inyectarImgParafo ? inyectarImgParrafo(idImgParrafo):''}
                 </div>
                <div class="about-prea contenedor-noticia">
-                  <p class="fw-bold"> ${texto}</p>
+                  <p class="fw-bold text-b-forced"> ${texto}</p>
                </div> 
             </div>
         `;

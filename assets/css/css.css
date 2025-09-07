@@ -1,8 +1,14 @@
+/* //=============COLORES GLOBALES */
+.color-header{background-color:#004080}
+.color-background{background-color:#FFFFFF}
+.color-main-btn{background-color:#0099CC}
+.color-hover{background-color:#00CC99}
+.color-selected{background-color:#FFD43B}
+
 /* ==========>GLOBALES */
 .fw-bold{
     font-weight: bold;
 }
-
 /* section-avisos */
 .aviso, .avisos small{
     font-weight: bold!important;
@@ -156,3 +162,125 @@
 .container-logos-oficiales{
     margin: 0 auto;
 }
+
+.text-dark {
+  color: lightblue!important;
+}
+.flaticon-energy {
+  color: lightblue!important;
+}
+.date-today {
+  color: lightblue!important;
+}
+
+/* ============> CSS DE CARUSEL */
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-height: 40vh; /* puedes cambiar a 100vh para pantalla completa */
+      min-height: 250px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    @media (min-width:991px){
+      .carousel{
+        max-height: 70vh; /* puedes cambiar a 100vh para pantalla completa */
+        min-height: 450px;
+      }
+    }
+
+    /* 🔹 Cada slide */
+    .carousel-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 0;
+      transition: opacity 1.5s ease-in-out; /* transición más fluida */
+    }
+
+    /* 🔹 Imagen dentro del slide */
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* no se deforma */
+      object-position: center;
+      animation: zoomPoster 14s ease-in-out infinite;
+    }
+
+    /* 🔹 Slide activo */
+    .carousel-item.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    /* 🔹 Animación de zoom continuo */
+    @keyframes zoomPoster {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    /* 🔹 Botones de navegación */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      font-size: 2rem;
+      padding: 10px 15px;
+      cursor: pointer;
+      z-index: 2;
+      transition: background 0.3s;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+
+    .carousel-item { will-change: opacity; }
+    .carousel-item.leaving { z-index: 2; }  /* slide saliente encima mientras se desvanece */
+    .carousel-item img { will-change: transform; }
+
+    /* Texto superpuesto en el carrusel */
+  .carousel-caption {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+    max-width: 80%;
+  }
+
+  .carousel-caption h2 {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+
+  /* Responsivo */
+  @media (max-width: 576px) {
+    .carousel-caption h2 { font-size: 1.2rem; }
+    .carousel-caption p { font-size: 0.9rem; }
+  }
+
+  /* COLRES DE FONDO */
+  .youtube-area{
+    background: #0099CC;
+    background-attachment: fixed; /* efecto "parallax" */
+    background-size: cover;
+    font-family: sans-serif;
+  }

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>F.E.N.A-Noticia</title>
+        <title>F.E.N.A-Competiciones</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
@@ -28,10 +28,10 @@
         <link rel="stylesheet" href="./assets/css/css.css">
 
         <style>
-            p.text-b-forced{color: rgb(34, 34, 34)!important;}
+            p.name-memoria{color: black!important;}
         </style>
     </head>
-    
+
 <body>
 <!-- Preloader Start -->
 <div id="preloader-active">
@@ -44,7 +44,7 @@
         </div>
     </div>
 </div>
-
+<!-- Preloader Start -->
  <header>
     <div class="header-area">
         <div class="main-header ">
@@ -219,39 +219,68 @@
         </div>
     </div>
 </header>
-<main>
-    <!--===SEC #1 - Noticia -->
-    <div class="about-area2 gray-bg pt-60 pb-60">
+<main>    
+
+    <section>
+         <div class="carousel" id="carousel">
+            <div class="carousel-item active">
+                <img src="./assets/img/fena-galery/modalidad-competiciones-fena.png" alt="Imagen 1">
+                <div class="carousel-caption">
+                    <!-- titulo de la noticia -->
+                    <h2 class="fw-bold color-main-btn" style="color: #ffffff;">ESTILOS DE NATACION DE LA FENA</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <section class="blog_area section-padding p-3">
         <div class="container">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="about-right mb-90">
-                            <div class="about-img">
-                                <img src="./assets/img/local-img/placeholder.png" alt="" class="img-parafo img-principal">
-                            </div> 
-                            <div class="heading-news">
-                                <h3 class="titulo-principal">                                    
-                                </h3>
-                            </div>
-                            <div class="parrafos">
-                                <!-- parrafos -->
-                            </div>
-                            <div class="social-share pt-10">
-                                <div class="section-tittle">
-                                    <h3 class="mr-20">Compartir:</h3>
-                                    <ul>
-                                        <li><a href="#"><img src="./assets/img/news/icon-ins.png" alt=""></a></li>
-                                        <li><a href="#"><img src="./assets/img/news/icon-fb.png" alt=""></a></li>
-                                        <li><a href="#"><img src="./assets/img/news/icon-tw.png" alt=""></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Comentario -->
+                 <!-- Natacion en Braza -->
+                 <!-- Natacion en Crol -->
+                 <!-- Natacion en Mariposa -->
+                 <!-- Natacion en Espalda -->
+
+                 <div class="card">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs d-flex justify-content-center">
+
+                            <li class="nav-item">
+                                <a class="nav-link active text-primary" aria-current="true" href="./estilos-natacion.html?id=crol">CROL</a>
+                            </li>
+
+                             <li class="nav-item">
+                                <a class="nav-link text-dark" aria-current="true" href="./estilos-natacion.html?id=espalda">ESPALDA</a>
+                            </li>
+
+                             <li class="nav-item">
+                                <a class="nav-link text-dark" aria-current="true" href="./estilos-natacion.html?id=braza">BRAZA</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" aria-current="true" href="./estilos-natacion.html?id=mariposa">MARIPOSA</a>
+                            </li>
+
+                        </ul>
                     </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">ESTILO DE NATACION EN CROL</h5>
+                        <small class="card-text name-memoria">Descripcion del estilo</small><br>
+
+                        <div class="d-flex justify-content-center">
+                            <a href="#" class="text-primary genric-btn danger-border url-seccion modulo-en-desarrollo">
+                                Ver Videos
+                            </a>
+                        </div>
+
+                        
+                        
+                    </div>
+                    
                 </div>
         </div>
-    </div>
+    </section>
 </main>
 
 <footer>
@@ -336,21 +365,18 @@
     </div>
     <!-- Footer End-->
 </footer>
-<!-- Modal Busqueda -->
-<div class="search-model-box fs-6">
+<!-- Search model Begin -->
+<div class="search-model-box">
     <div class="d-flex align-items-center h-100 justify-content-center">
         <div class="search-close-btn">+</div>
         <form class="search-model-form">
-            <input type="text" id="search-input" placeholder="Buscar Noticia.....">
-        </form> 
-        <div  class="d-md-none rounded-circle bg-danger icon-search-mobile d-flex justify-content-center align-items-center" id="btn-seach-news">
-            <i class="fa fa-search px-1"></i> 
-        </div>            
-    </div>    
+            <input type="text" id="search-input" placeholder="Searching key.....">
+        </form>
+    </div>
 </div>
+<!-- Search model end -->
 
 <!-- JS here -->
-
     <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <!-- Jquery, Popper, Bootstrap -->
     <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
@@ -362,33 +388,32 @@
     <!-- Jquery Slick , Owl-Carousel Plugins -->
     <script src="./assets/js/owl.carousel.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
-
+    <!-- Date Picker -->
+    <script src="./assets/js/gijgo.min.js"></script>
     <!-- One Page, Animated-HeadLin -->
     <script src="./assets/js/wow.min.js"></script>
     <script src="./assets/js/animated.headline.js"></script>
     <script src="./assets/js/jquery.magnific-popup.js"></script>
-
-    <!-- contact js -->
-    <script src="./assets/js/contact.js"></script>
-    <script src="./assets/js/jquery.form.js"></script>
-    <script src="./assets/js/jquery.validate.min.js"></script>
-    <script src="./assets/js/mail-script.js"></script>
-    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
 
     <!-- Scrollup, nice-select, sticky -->
     <script src="./assets/js/jquery.scrollUp.min.js"></script>
     <script src="./assets/js/jquery.nice-select.min.js"></script>
     <script src="./assets/js/jquery.sticky.js"></script>
     
+    <!-- contact js -->
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    
     <!-- Jquery Plugins, main Jquery -->	
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
-
-    <!-- local js -->
+       
+    <!-- local JS -->
     <script src="./assets/js/local-js/app.js" type="module"></script>
-    <script src="./assets/js/local-js/securesite.js" type="module"></script>
-    <script src="./assets/js/local-js/news.js" type="module"></script>
-    <script src="./assets/js/local-js/config.js"></script>  
-    
+    <script src="./assets/js/local-js/securesite.js" type="module"></script>   
+    <script src="./assets/js/local-js/config.js" type="module"></script>   
 </body>
 </html>

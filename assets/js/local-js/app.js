@@ -1,9 +1,14 @@
 import {avisos, comunicados, noticias, getImg, getIdUpdates} from "./switch-data.js";
+// import { confMenu } from "./config.js";
+
 //permitir carga de imagenes
 export const loadImg = true;
 
 document.addEventListener("DOMContentLoaded",()=>{
-    checkUpdate();    
+    configSite()
+    printOrgIntLogos();
+    printSponsorsLogos()
+    checkUpdate(); 
 });
 
 //>>>>>>>Verificar nuevos datos
@@ -148,7 +153,7 @@ function insertComunicados(){
         avisos.forEach(aviso => {        
             componente += `    
                 <div class="avisos">
-                    <small class="text-dark px-3">
+                    <small class="px-3">
                         ${aviso.aviso} //
                     </small>
                 </div>
@@ -294,3 +299,92 @@ function init(){
         }
        
     }
+
+//Imprimir Imagenes de Logo de los organismos internacionales
+function printOrgIntLogos(){
+    // document.querySelector('.title-org-int-natacion').textContent = ''
+
+    //Variables locales necesarias
+    const logoOrgImgContainer = document.querySelector('.natacion-org-logo');
+
+    const orgLogosNames = [
+        {
+            orgTitle:'logo-org-africa-aquatic.png',
+            orgUrl:'africaaquatics.org'
+        },
+        {
+            orgTitle:'logo-org-word-aquatics.png',
+            orgUrl:'www.worldaquatics.com'
+        }
+    ];
+
+    let componentLogos = '';
+    const rootUrlPics = 'assets/img/org-regulations';
+    //Crear los componentes
+    orgLogosNames.forEach(printLogo=>{
+        let {orgTitle,orgUrl} = printLogo
+        componentLogos += `
+            <div class="">
+                <a href="http://${orgUrl}" target="_blank">
+                    <img src="./${rootUrlPics}/${orgTitle}" class="img-fluid" alt="${orgTitle}">
+                </a>                
+            </div>
+        `
+    });
+    //inyectar los componentes
+    logoOrgImgContainer.innerHTML = componentLogos;
+}
+
+//Imprimir Imagenes de Logo de los Sponsors
+function printSponsorsLogos(){
+    document.querySelector('.sponsors-section').classList.add('d-none')
+}
+
+function configSite(){
+    //TEMAS DE LA PAGINA
+    const pathColors = {
+        //Clasico
+        //Marino
+        blueColors:{
+            header:'#0099CC',
+            mainBackground:'#FFFFFF',
+            mainBtn:'#0099CC',
+            hover:'#00CC99',
+            selected:'#FFD43B'
+        }        
+    }
+
+    //COLORES DE FONDO
+        // GENERAL
+            //#scrollUp -> fondo del btn de flecha ariba
+            document.querySelector('#scrollUp')? document.querySelector('#scrollUp').style.backgroundColor = pathColors.blueColors.mainBtn:''
+
+        // HEADER
+            //bold-text aviso -> texto de aviso y comunicados
+             document.querySelector('.aviso')?document.querySelector('.aviso').style.color = pathColors.blueColors.mainBackground:''
+
+            // .header-area -> fondo del contenedor de avisos
+            document.querySelector('.header-area')?document.querySelector('.header-area').style.backgroundColor = pathColors.blueColors.header:''
+            // .header-bottom  -> fond del contenedor de menus
+            document.querySelector('.header-bottom')?document.querySelector('.header-bottom').style.backgroundColor = pathColors.blueColors.header:''
+
+            
+            document.querySelector('.header-social')?document.querySelector('.header-social').style.backgroundColor = pathColors.blueColors.header:';'
+        //MAIN
+            //.bgr -> Fondo de las etiquetas de las noticias
+            document.querySelectorAll('.bgr').forEach(label=>{
+                label.style.backgroundColor = pathColors.blueColors.mainBtn
+            });
+
+        //FOOTER 
+}
+ if(document.querySelectorAll('.modulo-en-desarrollo')){
+        document.querySelectorAll('.modulo-en-desarrollo').forEach((e)=>{
+        e.addEventListener('click',(e)=>{
+            if (e.target === e.currentTarget) {
+                alert('Modulo en desarollo');
+            }       
+        })       
+    })
+ }
+

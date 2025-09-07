@@ -1,5 +1,11 @@
 import { cargarImg, fechaHoy, loadImg } from "./app.js";
 import {getImg, noticias} from "./switch-data.js";
+
+//========= Inicializar funciones importantes
+document.addEventListener('DOMContentLoaded',()=>{
+    activeCarusel()
+})
+
 //Check Noticias Local
 if(localStorage.getItem('noticiasLocalData') == null ){
     async function getNoticias() {
@@ -466,6 +472,7 @@ function mostrarNoticia(){
         // Maximo 1(Principal) + 5 Pequexo
 
         let filtroRecientes = [];
+        console.log(noticiasLocal)
         noticiasLocal.forEach(filtro=>{
             let fechaNoticia = filtro.noticia.fecha;
             let res = checkReciente(fechaNoticia);             
@@ -478,7 +485,7 @@ function mostrarNoticia(){
         function checkReciente(fechaNoticia){ 
             let reciente = false; 
             let noticia = fechaNoticia.split('-')//fehca de la noticia
-            let hoy = fechaHoy() .split('-')//fecha actual
+            let hoy = fechaHoy().split('-')//fecha actual
             
             // #1.comparar axos
             if(Number(noticia[0]) == Number(hoy[0])){
@@ -496,6 +503,7 @@ function mostrarNoticia(){
 
         //inyectar Noticia reciente
         function inyectarNewReciente(){
+            // console.log(filtroRecientes)
             let componente = '';
             let recietePrincipal = '';
             filtroRecientes.forEach(reciente =>{
@@ -544,4 +552,58 @@ function mostrarNoticia(){
 
 
     // ------>Seccion#4. Noticias mas populares    
+}
+
+//============ FUNCIONE DEL EFECTO CARROUSES
+function activeCarusel(){
+    // NUEVO: flag de animación
+    let isAnimating = false;
+    const items = document.querySelectorAll('.carousel-item');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let current = 0;
+    let interval;
+
+    function showSlide(index) {
+      items.forEach((item, i) => {
+        item.classList.remove('active');
+        if (i === index) {
+          item.classList.add('active');
+        }
+      });
+      current = index;
+    }
+
+    function nextSlide() {
+      let next = (current + 1) % items.length;
+      showSlide(next);
+    }
+
+    function prevSlide() {
+      let prev = (current - 1 + items.length) % items.length;
+      showSlide(prev);
+    }
+
+    // Botones manuales
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetInterval();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetInterval();
+    });
+
+    // Auto play
+    function startAutoPlay() {
+      interval = setInterval(nextSlide, 8000); // cambia cada 8s
+    }
+
+    function resetInterval() {
+      clearInterval(interval);
+      startAutoPlay();
+    }
+
+    startAutoPlay();
 }
