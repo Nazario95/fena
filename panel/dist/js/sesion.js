@@ -67,9 +67,10 @@ function accessDenied(){
         consultar['usr'] = usr;
         consultar['psw'] = psw;
 
-        // console.log(consultar);
+        console.log(consultar);
 
-        let res = await consulta(consultar,'admin_usr');        
+        let res = await consulta(consultar,'admin_usr');  
+
         if(res.empty){
             accessDenied()
             // console.log(res)
